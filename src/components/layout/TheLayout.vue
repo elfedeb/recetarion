@@ -6,9 +6,9 @@
     <main class="main">
       <slot name="main"></slot>
     </main>
-    <footer class="footer">
-      <slot name="footer"></slot>
-    </footer>
+
+    <slot name="footer"></slot>
+ 
   </div>
 </template>
 
