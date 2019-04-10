@@ -31,10 +31,13 @@ export default { name: "TheHeader" };
 </script>
 
 <style lang="scss" scoped>
+.header {
+  z-index: 888;
+}
 nav {
   display: flex;
   align-items: center;
-  .burger-menu{
+  .burger-menu {
     padding: 0 16px;
   }
   .title {
