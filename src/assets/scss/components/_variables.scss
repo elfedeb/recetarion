@@ -242,7 +242,7 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
 // 13. Navigation Bar
 // ==========================================================================
 
-$navbar-height: 64px !default;
+$navbar-height: 56px !default;
 $navbar-line-height: $navbar-height !default;
 $navbar-height-mobile: 56px !default;
 $navbar-line-height-mobile: $navbar-height-mobile !default;
@@ -303,8 +303,8 @@ $toast-action-color: #eeff41;
 // 20. Typography
 // ==========================================================================
 
-$font-stack: 'Inter', sans-serif;
 // $font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+$font-stack: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
 $off-black: rgba(0, 0, 0, 0.48) !default;
 $dark-text-color: rgba(0, 0, 0, 0.75) !default;
 

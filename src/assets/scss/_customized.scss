@@ -1,12 +1,8 @@
-@import url("https://rsms.me/inter/inter.css");
-html {
-  font-family: "Inter", sans-serif;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800');
 
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -20,7 +16,8 @@ body,
   position: fixed;
   background: #333;
   color: #eee;
-  right: 0;
+  right: 50%;
+  z-index: 99999999;
 }
 
 .main {
