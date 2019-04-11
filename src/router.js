@@ -17,7 +17,7 @@ export default new Router({
       path: "/customer-portal",
       name: "customer-portal",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/CustomerPortal.vue")
+        import(/* webpackChunkName: "customer-portal" */ "./views/CustomerPortal.vue")
     }
   ]
 })

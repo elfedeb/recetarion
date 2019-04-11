@@ -11,7 +11,7 @@
     </span>
     <span class="user-name dark-text b-text">Robert Montgomery</span>
     <span class="user-email">rmontgomery@gmail.com</span>
-    <div class="divider"></div>
+    <hr>
     <ul class="side-navigation" role="navigation">
       <li>
         <a href="#!" class="waves-effect waves-light btn-flat" role="menuitem">

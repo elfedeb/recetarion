@@ -1,15 +1,34 @@
 <template>
   <section class="section" role="main">
-    <div class="card large">
+    <!-- <div class="card large">
       <div class="card-content">
         <h4>To-do list title</h4>
+        
       </div>
-    </div>
+    </div> -->
 
-    <!-- section content in here -->
+    <v-card>
+        <v-card-title>
+          <div>
+            <BaseStepper/>
+          </div>
+        </v-card-title>
+      </v-card>
+
+
+
   </section>
 </template>
 
+
 <script>
-  export default { name: "MainSection" };
+// @ is an alias to /src
+import BaseStepper from "@/components/ui/BaseStepper.vue";
+
+export default {
+  name: "MainSection",
+  components: {
+    BaseStepper
+  }
+};
 </script>

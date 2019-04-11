@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800");
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 body,
 .wrap {
@@ -12,26 +8,26 @@ body,
   flex-direction: column;
 }
 
-body::before {
-  background: #000 url("assets/todo-over.png");
-  width: 1923px;
-  height: 100%;
-  content: "asdf";
-  display: block;
-  position: fixed;
-  z-index: 9999;
-  opacity: 0.6;
-  left: 0;
-  pointer-events: none;
-}
+// body::before {
+//   background: #000 url("assets/todo-over.png");
+//   width: 1923px;
+//   height: 100%;
+//   content: "asdf";
+//   display: block;
+//   position: fixed;
+//   z-index: 9999;
+//   opacity: 0.6;
+//   left: 0;
+//   pointer-events: none;
+// }
 
-#temp-template-nav {
-  position: fixed;
-  background: #333;
-  color: #eee;
-  right: 50%;
-  z-index: 99999999;
-}
+// #temp-template-nav {
+//   position: fixed;
+//   background: #333;
+//   color: #eee;
+//   right: 50%;
+//   z-index: 99999999;
+// }
 
 .main {
   display: flex;
@@ -48,10 +44,12 @@ body::before {
   }
 }
 
-// Side Navigation link list
+hr {
+  background: #e6e6e6;
+  height: 1px;
+  border: 0;
+}
 
-.side-navigation {
-  .btn-flat {
-    color: $off-black;
-  }
+.v-sheet {
+  border-radius: 8px;
 }
