@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
 import '@/assets/stylus/variants.styl'
-// import 'vuetify/src/stylus/app.styl'
 
 
 

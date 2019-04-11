@@ -9,41 +9,49 @@
         ></path>
       </svg>
     </span>
-    <span class="user-name dark-text b-text">Robert Montgomery</span>
+    <span class="user-name">Robert Montgomery</span>
     <span class="user-email">rmontgomery@gmail.com</span>
     <hr>
-    <ul class="side-navigation" role="navigation">
-      <li>
-        <a href="#!" class="waves-effect waves-light btn-flat" role="menuitem">
-          <i class="material-icons left">home</i>Home
-        </a>
-      </li>
-      <li>
-        <a href="#!" class="waves-effect waves-light btn-flat --active" role="menuitem">
-          <i class="material-icons left">check_circle</i>To-do
-        </a>
-      </li>
-      <li>
-        <a href="#!" class="waves-effect waves-light btn-flat" role="menuitem">
-          <i class="material-icons left">account_circle</i>Profile
-        </a>
-      </li>
-      <li>
-        <a href="#!" class="waves-effect waves-light btn-flat" role="menuitem">
-          <i class="material-icons left">help</i>Help
-        </a>
-      </li>
-    </ul>
+    <v-list>
+      <v-list-tile v-for="item in items" :key="item.title" @click="listLink">
+        <v-list-tile-action>
+          <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
+        </v-list-tile-action>
+
+        <v-list-tile-content>
+          <v-list-tile-title v-text="item.title"></v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
   </aside>
 </template>
 
 <script>
-export default { name: "MainAside" };
+export default {
+  name: "MainAside",
+  data() {
+    return {
+      items: [
+        { icon: "home", title: "Home" },
+        { icon: "check_circle", title: "To-do" },
+        { icon: "account_circle", title: "Profile" },
+        { icon: "help", title: "Help" }
+      ]
+    };
+  },
+  methods: {
+    listLink: function(event) {
+      console.log("Hello 👋");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .aside {
   flex: 0 0 257px;
+  display: flex;
+  flex-flow: column wrap;
   background: #fff;
   border-right: 1px solid #e6e6e6;
   .brand-image {
@@ -52,7 +60,8 @@ export default { name: "MainAside" };
     margin: 40px 0 16px 16px;
   }
   .user-name {
-    font-size: 1.29rem;
+    font-size: 1.39rem;
+    font-weight: 700;
     letter-spacing: 0.02rem;
     margin-left: 16px;
     line-height: 1.3;
@@ -63,40 +72,11 @@ export default { name: "MainAside" };
     font-weight: 600;
     letter-spacing: -0.016rem;
     margin-bottom: 12px;
+    color: #757575;
   }
-  .side-navigation {
-    ul {
-      list-style-type: none;
-      li {
-        margin: 8px;
-      }
-    }
-  }
-
-  .side-navigation {
-    display: flex;
-    flex-flow: column wrap;
-    li {
-      margin: 8px;
-    }
-    .btn-flat {
-      display: flex;
-      flex: 1 0 100%;
-      padding: 0 5px;
-      text-transform: inherit;
-      font-size: 1.1rem;
-      font-weight: 500;
-      height: 40px;
-      line-height: 40px;
-      i {
-        font-size: 1.6rem;
-        line-height: inherit;
-      }
-      &.--active {
-        color: #394b88;
-        background-color: #e7e9f0;
-      }
-    }
+  .v-list > div {
+    margin: 10px;
   }
 }
 </style>
+

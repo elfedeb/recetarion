@@ -37,5 +37,11 @@
 </template>
 
 <script>
-export default { name: "BaseStepper" };
+export default { name: "BaseStepper",
+  data () {
+      return {
+        e6: 1
+      }
+    } 
+  };
 </script>

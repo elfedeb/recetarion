@@ -1,22 +1,12 @@
 <template>
   <section class="section" role="main">
-    <!-- <div class="card large">
-      <div class="card-content">
-        <h4>To-do list title</h4>
-        
-      </div>
-    </div> -->
-
     <v-card>
-        <v-card-title>
-          <div>
-            <BaseStepper/>
-          </div>
-        </v-card-title>
-      </v-card>
-
-
-
+      <v-card-title>
+        <div>
+          <BaseStepper/>
+        </div>
+      </v-card-title>
+    </v-card>
   </section>
 </template>
 
@@ -32,3 +22,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.section {
+    flex: 1 auto;
+    padding: 0.7rem 0.5rem;
+    display: flex;
+    flex-flow: column wrap;
+  }
+</style>

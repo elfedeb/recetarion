@@ -21,8 +21,8 @@
 </template>
 
 <style lang="scss" scoped>
-  .title {
-    font-weight: 600;
-    letter-spacing: -0.065rem !important;
-  }
+.title {
+  font-weight: 600;
+  letter-spacing: -0.065rem !important;
+}
 </style>
