@@ -12,24 +12,24 @@
     <span class="user-name dark-text b-text">Robert Montgomery</span>
     <span class="user-email">rmontgomery@gmail.com</span>
     <div class="divider"></div>
-    <ul class="side-navigation">
+    <ul class="side-navigation" role="navigation">
       <li>
-        <a href="#!" class="waves-effect waves-light btn-flat">
+        <a href="#!" class="waves-effect waves-light btn-flat" role="menuitem">
           <i class="material-icons left">home</i>Home
         </a>
       </li>
       <li>
-        <a href="#!" class="waves-effect waves-light btn-flat --active">
+        <a href="#!" class="waves-effect waves-light btn-flat --active" role="menuitem">
           <i class="material-icons left">check_circle</i>To-do
         </a>
       </li>
       <li>
-        <a href="#!" class="waves-effect waves-light btn-flat">
+        <a href="#!" class="waves-effect waves-light btn-flat" role="menuitem">
           <i class="material-icons left">account_circle</i>Profile
         </a>
       </li>
       <li>
-        <a href="#!" class="waves-effect waves-light btn-flat">
+        <a href="#!" class="waves-effect waves-light btn-flat" role="menuitem">
           <i class="material-icons left">help</i>Help
         </a>
       </li>

@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section" role="main">
     <div class="card large">
       <div class="card-content">
         <h4>To-do list title</h4>

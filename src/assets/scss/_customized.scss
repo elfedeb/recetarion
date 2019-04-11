@@ -12,6 +12,19 @@ body,
   flex-direction: column;
 }
 
+body::before {
+  background: #000 url("assets/todo-over.png");
+  width: 1923px;
+  height: 100%;
+  content: "asdf";
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  opacity: 0.6;
+  left: 0;
+  pointer-events: none;
+}
+
 #temp-template-nav {
   position: fixed;
   background: #333;

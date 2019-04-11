@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" role="banner">
     <nav>
       <a class="burger-menu" href="#">
         <i class="material-icons dp48">menu</i>
