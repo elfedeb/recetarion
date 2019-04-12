@@ -1,49 +1,19 @@
 <template>
-    <TheLayout>
-      <template v-slot:header>
-        <TheHeader/>
-      </template>
-
-      <template v-slot:main>
-        <MainAside/>
-
-        <MainSection>
-          <template>
-            <slot><v-card>
-                <v-card-title>
-                  <div>
-                    <BaseStepper/>
-                  </div>
-                </v-card-title>
-              </v-card></slot>
-          </template>
-        </MainSection>
-        
-      </template>
-
-      <template v-slot:footer>
-        <TheFooter/>
-      </template>
-    </TheLayout>
+  <v-card>
+    <v-card-title>
+      <div>
+        <BaseStepper/>
+      </div>
+    </v-card-title>
+  </v-card>
 </template>
 
 <script>
-// @ is an alias to /src
-import TheLayout from "@/components/layout/TheLayout.vue";
-import TheHeader from "@/components/layout/TheHeader.vue";
-import MainAside from "@/components/layout/MainAside.vue";
-import MainSection from "@/components/layout/MainSection.vue";
-import TheFooter from "@/components/layout/TheFooter.vue";
 import BaseStepper from "@/components/ui/BaseStepper.vue";
 
 export default {
-  name: "home",
+  name: "Home",
   components: {
-    TheLayout,
-    TheHeader,
-    MainAside,
-    MainSection,
-    TheFooter,
     BaseStepper
   }
 };
