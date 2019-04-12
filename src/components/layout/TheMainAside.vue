@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "MainAside",
+  name: "TheMainAside",
   data() {
     return {
       items: [

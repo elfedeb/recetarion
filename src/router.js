@@ -11,25 +11,25 @@ export default new Router({
       path: "/",
       name: "home",
       component: () =>
-        import(/* webpackChunkName: "home" */ "./views/Home.vue")
+        import(/* webpackChunkName: "home" */ "./views/PageHome.vue")
     },
     {
       path: "/todo",
       name: "todo-lists",
       component: () =>
-        import(/* webpackChunkName: "todo-lists" */ "./views/ToDos.vue")
+        import(/* webpackChunkName: "todo-lists" */ "./views/PageToDos.vue")
     },
     {
       path: "/profile",
       name: "profile",
       component: () =>
-        import(/* webpackChunkName: "profile" */ "./views/ProfilePage.vue")
+        import(/* webpackChunkName: "profile" */ "./views/PageProfile.vue")
     },
     {
       path: "/help",
       name: "help",
       component: () =>
-        import(/* webpackChunkName: "help" */ "./views/HelpPage.vue")
+        import(/* webpackChunkName: "help" */ "./views/PageHelp.vue")
     }
   ]
 })

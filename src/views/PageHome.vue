@@ -12,7 +12,7 @@
 import BaseStepper from "@/components/ui/BaseStepper.vue";
 
 export default {
-  name: "Home",
+  name: "PageHome",
   components: {
     BaseStepper
   }

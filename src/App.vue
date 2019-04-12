@@ -6,13 +6,13 @@
       </template>
 
       <template v-slot:main>
-        <MainAside/>
+        <TheMainAside/>
 
-        <MainSection>
+        <TheMainSection>
           <v-content>
             <router-view/>
           </v-content>
-        </MainSection>
+        </TheMainSection>
       </template>
 
       <template v-slot:footer>
@@ -26,8 +26,8 @@
 // @ is an alias to /src
 import TheLayout from "@/components/layout/TheLayout.vue";
 import TheHeader from "@/components/layout/TheHeader.vue";
-import MainAside from "@/components/layout/MainAside.vue";
-import MainSection from "@/components/layout/MainSection.vue";
+import TheMainAside from "@/components/layout/TheMainAside.vue";
+import TheMainSection from "@/components/layout/TheMainSection.vue";
 import TheFooter from "@/components/layout/TheFooter.vue";
 
 export default {
@@ -35,8 +35,8 @@ export default {
   components: {
     TheLayout,
     TheHeader,
-    MainAside,
-    MainSection,
+    TheMainAside,
+    TheMainSection,
     TheFooter
   }
 };
