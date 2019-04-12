@@ -40,7 +40,7 @@ export default {
     };
   },
   methods: {
-    listLink: function(event) {
+    listLink: function() {
       console.log("Hello 👋");
     }
   }

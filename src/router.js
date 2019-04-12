@@ -13,11 +13,11 @@ export default new Router({
       name: 'home',
       component: Home
     },
-    {
-      path: "/customer-portal",
-      name: "customer-portal",
-      component: () =>
-        import(/* webpackChunkName: "customer-portal" */ "./views/CustomerPortal.vue")
-    }
+    // {
+    //   path: "/customer-portal",
+    //   name: "customer-portal",
+    //   component: () =>
+    //     import(/* webpackChunkName: "customer-portal" */ "./views/CustomerPortal.vue")
+    // }
   ]
 })
