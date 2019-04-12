@@ -1,11 +1,7 @@
 <template>
-  <v-card>
-    <v-card-title>
-      <div>
-        <BaseStepper/>
-      </div>
-    </v-card-title>
-  </v-card>
+  <v-container fluid grid-list-lg>
+    <BaseStepper/>
+  </v-container>
 </template>
 
 <script>

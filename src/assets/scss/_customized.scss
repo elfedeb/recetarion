@@ -48,6 +48,37 @@ hr {
     }
   }
 }
-.v-sheet {
+.v-card {
   border-radius: $border-radius-u;
+}
+.section .container {
+  padding: 4px;
+  &.grid-list-lg .layout .column.flex.m4 {
+    padding: 0 !important;
+    .flex {
+      padding: 4px;
+    }
+  }
+}
+
+.v-card--flat {
+  border: 1px solid #e6e6e6 !important;
+}
+
+.theme--light.v-stepper
+  .v-stepper__step.v-stepper__step--active
+  .v-stepper__step__step {
+  background: #212121 !important;
+}
+
+.theme--light.v-stepper
+  .v-stepper__step.v-stepper__step--complete
+  .v-stepper__step__step {
+  background: #78be21 !important;
+}
+
+.theme--light.v-stepper
+  .v-stepper__step:not(.v-stepper__step--active):not(.v-stepper__step--complete):not(.v-stepper__step--error)
+  .v-stepper__step__step {
+  background: #9e9e9e;
 }

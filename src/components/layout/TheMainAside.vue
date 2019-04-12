@@ -13,7 +13,7 @@
     <span class="user-email">rmontgomery@gmail.com</span>
     <hr>
     <v-list>
-      <v-list-tile v-for="item in items" :key="item.title" @click="listLink" :to="item.link">
+      <v-list-tile v-for="item in items" :key="item.title" :to="item.link">
         <v-list-tile-action>
           <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
         </v-list-tile-action>
@@ -74,4 +74,3 @@ export default {
   }
 }
 </style>
-
