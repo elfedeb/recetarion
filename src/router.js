@@ -13,11 +13,23 @@ export default new Router({
       name: 'home',
       component: Home
     },
-    // {
-    //   path: "/customer-portal",
-    //   name: "customer-portal",
-    //   component: () =>
-    //     import(/* webpackChunkName: "customer-portal" */ "./views/CustomerPortal.vue")
-    // }
+    {
+      path: "/todo",
+      name: "todo-lists",
+      component: () =>
+        import(/* webpackChunkName: "todo-lists" */ "./views/ToDos.vue")
+    },
+    {
+      path: "/profile",
+      name: "profile",
+      component: () =>
+        import(/* webpackChunkName: "profile" */ "./views/ProfilePage.vue")
+    },
+    {
+      path: "/help",
+      name: "help",
+      component: () =>
+        import(/* webpackChunkName: "help" */ "./views/HelpPage.vue")
+    }
   ]
 })

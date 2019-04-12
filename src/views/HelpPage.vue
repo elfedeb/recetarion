@@ -9,13 +9,9 @@
 
         <MainSection>
           <template>
-            <slot><v-card>
-                <v-card-title>
-                  <div>
-                    <BaseStepper/>
-                  </div>
-                </v-card-title>
-              </v-card></slot>
+            <slot>
+              <h1>Help</h1>
+            </slot>
           </template>
         </MainSection>
         
@@ -34,17 +30,15 @@ import TheHeader from "@/components/layout/TheHeader.vue";
 import MainAside from "@/components/layout/MainAside.vue";
 import MainSection from "@/components/layout/MainSection.vue";
 import TheFooter from "@/components/layout/TheFooter.vue";
-import BaseStepper from "@/components/ui/BaseStepper.vue";
 
 export default {
-  name: "home",
+  name: "HelpPage",
   components: {
     TheLayout,
     TheHeader,
     MainAside,
     MainSection,
-    TheFooter,
-    BaseStepper
+    TheFooter
   }
 };
 </script>

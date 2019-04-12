@@ -13,7 +13,7 @@
     <span class="user-email">rmontgomery@gmail.com</span>
     <hr>
     <v-list>
-      <v-list-tile v-for="item in items" :key="item.title" @click="listLink">
+      <v-list-tile v-for="item in items" :key="item.title" @click="listLink" :to="item.link">
         <v-list-tile-action>
           <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
         </v-list-tile-action>
@@ -32,17 +32,12 @@ export default {
   data() {
     return {
       items: [
-        { icon: "home", title: "Home" },
-        { icon: "check_circle", title: "To-do" },
-        { icon: "account_circle", title: "Profile" },
-        { icon: "help", title: "Help" }
+        { icon: "home", title: "Home", link: "/" },
+        { icon: "check_circle", title: "To-do", link: "/todo" },
+        { icon: "account_circle", title: "Profile", link: "/profile" },
+        { icon: "help", title: "Help", link: "/help" }
       ]
     };
-  },
-  methods: {
-    listLink: function() {
-      console.log("Hello 👋");
-    }
   }
 };
 </script>
