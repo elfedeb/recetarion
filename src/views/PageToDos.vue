@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-lg>
+  <v-container fluid grid-list-lg>
     <v-layout column wrap>
       <div class="flex xs12">
         <v-card flat flex xs12>
@@ -76,7 +76,3 @@ export default {
   }
 };
 </script>
-
-// <style lang="scss" scoped>
-//
-</style>

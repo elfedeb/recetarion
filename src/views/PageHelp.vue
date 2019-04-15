@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-lg>
+  <v-container fluid grid-list-lg>
     <v-layout row fill-height wrap>
       <div class="column flex m4">
         <div class="flex">

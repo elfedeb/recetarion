@@ -1,6 +1,8 @@
 <template>
   <v-container fluid grid-list-lg>
-    <BaseStepper/>
+    <v-layout column wrap>
+      <BaseStepper/>
+    </v-layout>
   </v-container>
 </template>
 

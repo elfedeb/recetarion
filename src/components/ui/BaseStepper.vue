@@ -1,4 +1,5 @@
 <template>
+<div class="flex xs12">
   <v-stepper v-model="e6" vertical>
     <v-stepper-step :complete="e6 > 1" step="1">
       Welcome
@@ -34,6 +35,7 @@
       <v-btn flat>Cancel</v-btn>
     </v-stepper-content>
   </v-stepper>
+</div>
 </template>
 
 <script>
