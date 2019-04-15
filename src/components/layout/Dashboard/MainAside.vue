@@ -1,5 +1,5 @@
 <template>
-  <aside class="aside">
+  <v-navigation-drawer clipped fixed :value="drawer" app>
     <span class="brand-image">
       <svg class="svg-icon sunstreet-svg" viewBox="0 0 50 50" aria-hidden="true">
         <path
@@ -13,7 +13,7 @@
     <span class="user-email">rmontgomery@gmail.com</span>
     <hr>
     <v-list>
-      <v-list-tile v-for="item in items" :key="item.title" :to="item.link">
+      <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.link">
         <v-list-tile-action>
           <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
         </v-list-tile-action>
@@ -23,28 +23,35 @@
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
-  </aside>
+  </v-navigation-drawer>
 </template>
 
 <script>
 export default {
-  name: "TheMainAside",
+  name: "MainAside",
+  computed: {
+    drawer: function() {
+      return this.$store.state.menu;
+    }
+  },
   data() {
     return {
-      items: [
+      menuItems: [
         { icon: "home", title: "Home", link: "/" },
-        { icon: "check_circle", title: "To-do", link: "/todo" },
+        { icon: "check_circle", title: "To-do", link: "/to-do" },
         { icon: "account_circle", title: "Profile", link: "/profile" },
         { icon: "help", title: "Help", link: "/help" }
-      ]
+      ],
     };
+  },
+  mounted() {
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.aside {
-  flex: 0 0 257px;
+aside {
+  flex: 0;
   display: flex;
   flex-flow: column wrap;
   background: #fff;
@@ -52,17 +59,17 @@ export default {
   .brand-image {
     height: 48px;
     width: 48px;
-    margin: 40px 0 16px 16px;
+    margin: 28px 0 16px 28px;
   }
   .user-name {
     font-size: 1.39rem;
     font-weight: 700;
     letter-spacing: 0.02rem;
-    margin-left: 16px;
+    margin-left: 28px;
     line-height: 1.3;
   }
   .user-email {
-    margin-left: 16px;
+    margin-left: 28px;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: -0.016rem;

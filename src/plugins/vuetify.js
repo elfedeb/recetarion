@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
-import '@/assets/stylus/variants.styl'
-
-
+import 'vuetify/src/stylus/app.styl';
 
 Vue.use(Vuetify, {
   iconfont: 'md',
@@ -12,4 +10,4 @@ Vue.use(Vuetify, {
     accent: '#8c9eff',
     error: '#b71c1c'
   }
-})
+});

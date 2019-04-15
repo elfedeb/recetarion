@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import DashboardBase from "@/components/layout/DashboardBase.vue";
+import AuthBase from "@/components/layout/AuthBase.vue";
 
 Vue.use(Router)
 
@@ -8,28 +10,55 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: () =>
-        import(/* webpackChunkName: "home" */ "./views/PageHome.vue")
+      path: '/',
+      name: 'base',
+      redirect: '/home',
+      component: DashboardBase,
+      children: [
+        {
+          path: "/home",
+          name: "home",
+          component: () => import("./views/PageHome.vue"),
+          meta: { pageTitle: 'Home' }
+        },
+        {
+          path: "/to-do",
+          name: "todo-lists",
+          component: () => import("./views/PageToDos.vue"),
+          meta: { pageTitle: 'To-do' }
+        },
+        {
+          path: "/profile",
+          name: "profile",
+          component: () => import("./views/PageProfile.vue"),
+          meta: { pageTitle: 'Profile' }
+        },
+        {
+          path: "/help",
+          name: "help",
+          component: () => import("./views/PageHelp.vue"),
+          meta: { pageTitle: 'Help'  }
+        }
+      ]
     },
     {
-      path: "/todo",
-      name: "todo-lists",
-      component: () =>
-        import(/* webpackChunkName: "todo-lists" */ "./views/PageToDos.vue")
+      path: '/auth',
+      name: 'auth',
+      redirect: '/auth/login',
+      component: AuthBase,
+      children: [
+        {
+          path: "/auth/login",
+          name: "login",
+          component: () => import("./views/PageLogin.vue"),
+          meta: { pageTitle: 'Login' }
+        }
+      ]
     },
     {
-      path: "/profile",
-      name: "profile",
-      component: () =>
-        import(/* webpackChunkName: "profile" */ "./views/PageProfile.vue")
-    },
-    {
-      path: "/help",
-      name: "help",
-      component: () =>
-        import(/* webpackChunkName: "help" */ "./views/PageHelp.vue")
+      path: '/auth/signout',
+      name: 'signout',
+      redirect: '/auth/login'
     }
-  ]
+  ] // end of routes array
 })

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800");
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 $border-radius-u: 4px;
 
 // body::before {
@@ -20,7 +24,7 @@ hr {
   height: 1px;
   border: 0;
 }
-.aside {
+aside {
   .v-list .v-list__tile--link,
   .v-list .v-list__tile--highlighted,
   .v-list .v-list__group__header {
