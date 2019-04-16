@@ -1,7 +1,7 @@
 <template>
   <v-container fluid grid-list-lg>
     <v-layout column wrap>
-      <div class="flex xs12">
+      <div class="flex xs12 todo-pending">
         <v-card flat flex xs12>
           <v-card-title primary-title>
             <v-flex xs12>
@@ -10,7 +10,7 @@
                 <v-list>
                   <v-list-tile v-for="item in todosItems" :key="item.title" @click="todoStatus">
                     <v-list-tile-action>
-                      <v-icon>radio_button_unchecked</v-icon>
+                      <v-icon>info</v-icon>
                     </v-list-tile-action>
 
                     <v-list-tile-content>
@@ -23,7 +23,7 @@
           </v-card-title>
         </v-card>
       </div>
-      <div class="flex xs12">
+      <div class="flex xs12 todo-completed">
         <v-card flat flex xs12>
           <v-card-title primary-title>
             <v-flex xs12>
@@ -32,7 +32,7 @@
                 <v-list>
                   <v-list-tile v-for="item in doneItems" :key="item.title" @click="todoStatus">
                     <v-list-tile-action>
-                      <v-icon>done</v-icon>
+                      <v-icon>check_circle</v-icon>
                     </v-list-tile-action>
 
                     <v-list-tile-content>
