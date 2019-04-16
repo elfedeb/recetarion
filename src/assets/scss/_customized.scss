@@ -120,7 +120,11 @@ aside {
 .elev {
   cursor: pointer;
 }
-
+.v-dialog {
+  .v-card__text {
+    padding: 4px;
+  }
+}
 .v-content__wrap {
   display: flex;
 }
