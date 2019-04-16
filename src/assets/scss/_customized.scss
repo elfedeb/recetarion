@@ -86,13 +86,11 @@ aside {
   border: 1px solid #e6e6e6 !important;
 }
 
-.v-stepper__step.v-stepper__step--active
-  .v-stepper__step__step {
+.v-stepper__step.v-stepper__step--active .v-stepper__step__step {
   background: #212121 !important;
 }
 
-.v-stepper__step.v-stepper__step--complete
-  .v-stepper__step__step {
+.v-stepper__step.v-stepper__step--complete .v-stepper__step__step {
   background: #78be21 !important;
 }
 
@@ -115,6 +113,18 @@ aside {
   h3 {
     color: #696969;
     margin: 2rem 0;
+  }
+}
+.v-card {
+  .v-expansion-panel {
+    background: transparent;
+    box-shadow: none;
+    .v-expansion-panel__container {
+      background: transparent;
+    }
+    h4 {
+      color: #313a64;
+    }
   }
 }
 
