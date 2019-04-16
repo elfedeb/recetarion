@@ -32,8 +32,11 @@
 
 <script>
 export default {
-  beforeCreate: function() {
-    document.body.className = "login-page";
+  mounted: function() {
+    document.body.classList.add('login-page')
+  },
+  destroyed: function() {
+    document.body.classList.remove('login-page')
   },
   data: () => ({
     languages: ["English", "Spanish"]
