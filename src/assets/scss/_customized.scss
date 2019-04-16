@@ -16,6 +16,13 @@ $font-weight-bold: 600;
 //   pointer-events: none;
 // }
 
+body.login-page .v-content__wrap {
+  background-image: url("~@/assets/sign-in-bg.png");
+  background-origin: padding-box;
+  background-position: center center;
+  background-size: cover;
+}
+
 hr {
   background: #e6e6e6;
   height: 1px;

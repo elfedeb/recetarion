@@ -32,6 +32,9 @@
 
 <script>
 export default {
+  beforeCreate: function() {
+    document.body.className = "login-page";
+  },
   data: () => ({
     languages: ["English", "Spanish"]
   })
@@ -39,17 +42,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-form {
+  margin: 3rem 0 3rem 5.4rem;
+}
+
 .v-card {
   padding: 1rem 1.6rem;
-  margin: 3rem 0 3rem 5.4rem;
-  h3 {
-    margin: 0 0 5.4rem;
-    font-size: 1.43rem;
+}
+
+@media screen and (max-width: 600px) {
+  .v-form,
+  .v-card {
+    margin: 0 auto;
   }
 }
+
 .v-btn {
-    margin: 15vh 0 0 auto;
+  margin: 15vh 0 0 auto;
 }
+
 .complementary-links {
   text-align: right;
   padding: 16px;
