@@ -68,26 +68,58 @@ aside {
   }
 }
 
+.v-alert.v-alert.lennar-alert {
+  & {
+    border-width: 1px;
+    background: #fff;
+    color: #585858;
+    margin: -8px 0 16px;
+  }
+  & .v-alert__icon.v-icon,
+  &.v-alert__dismissible .v-icon {
+    color: #ffc108;
+    caret-color: #ffc108;
+  }
+}
+
 .v-card--flat {
   border: 1px solid #e6e6e6 !important;
 }
 
-.theme--light.v-stepper
-  .v-stepper__step.v-stepper__step--active
+.v-stepper__step.v-stepper__step--active
   .v-stepper__step__step {
   background: #212121 !important;
 }
 
-.theme--light.v-stepper
-  .v-stepper__step.v-stepper__step--complete
+.v-stepper__step.v-stepper__step--complete
   .v-stepper__step__step {
   background: #78be21 !important;
 }
 
-.theme--light.v-stepper
-  .v-stepper__step:not(.v-stepper__step--active):not(.v-stepper__step--complete):not(.v-stepper__step--error)
+.v-stepper__step:not(.v-stepper__step--active):not(.v-stepper__step--complete):not(.v-stepper__step--error)
   .v-stepper__step__step {
   background: #9e9e9e;
+}
+
+.v-stepper__label {
+  width: 100%;
+}
+.v-stepper__content {
+  .v-stepper-label__header {
+    font-size: 15px;
+  }
+  .v-card__title {
+    padding: 12px;
+    color: #393939;
+  }
+  h3 {
+    color: #696969;
+    margin: 2rem 0;
+  }
+}
+
+.elev {
+  cursor: pointer;
 }
 
 .v-content__wrap {
