@@ -32,7 +32,7 @@
             <v-hover>
               <v-card flat @click.stop="dialog = true"
                 slot-scope="{ hover }"
-                :class="`elev elevation-${hover ? 8 : 1}`"
+                :class="`elev elevation-${hover ? 4 : 0}`"
                 class="mx-auto">
                 <v-card-title>
                   <h4>How solar works</h4>
@@ -51,7 +51,7 @@
             <v-hover>
               <v-card flat @click.stop="dialog = true"
                 slot-scope="{ hover }"
-                :class="`elev elevation-${hover ? 8 : 1}`"
+                :class="`elev elevation-${hover ? 4 : 0}`"
                 class="mx-auto">
                 <v-card-title>
                   <h4>How solar works</h4>
@@ -70,7 +70,7 @@
             <v-hover>
               <v-card flat @click.stop="dialog = true"
                 slot-scope="{ hover }"
-                :class="`elev elevation-${hover ? 8 : 1}`"
+                :class="`elev elevation-${hover ? 4 : 0}`"
                 class="mx-auto">
                 <v-card-title>
                   <h4>How solar works</h4>
