@@ -164,14 +164,14 @@
     <v-dialog v-model="dialog" max-width="592">
       <v-card>
         <v-card-text>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/d4UUKB4buVc"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <div class="embed-video-container">
+            <iframe
+              src="https://www.youtube.com/embed/d4UUKB4buVc"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -191,3 +191,22 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.v-stepper__label {
+  width: 100%;
+}
+.v-stepper-label__header {
+  font-size: 15px;
+}
+.v-stepper__content {
+  .v-card__title {
+    padding: 12px;
+    color: #393939;
+  }
+  h3 {
+    color: #696969;
+    margin: 2rem 0;
+  }
+}
+</style>
