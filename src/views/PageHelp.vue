@@ -1,5 +1,6 @@
 <template>
   <v-container fluid grid-list-lg>
+    
     <v-layout row fill-height wrap>
       <div class="column flex m4">
         <div class="flex">
@@ -21,12 +22,12 @@
 
                       <v-list-tile-content>
                         <v-list-tile-title v-text="f.title"></v-list-tile-title>
-                        <v-list-tile-sub-title v-text="f.subtitle"></v-list-tile-sub-title>
+                        <!-- <v-list-tile-sub-title v-text="f.subtitle"></v-list-tile-sub-title> -->
                       </v-list-tile-content>
 
                       <v-list-tile-action>
                         <v-btn icon ripple>
-                          <v-icon color="grey lighten-1">info</v-icon>
+                          <v-icon color="grey lighten-1">chevron_right</v-icon>
                         </v-btn>
                       </v-list-tile-action>
                     </v-list-tile>
@@ -43,24 +44,19 @@
                 <h3 class="m-0">FAQ</h3>
                 <div>
                   <v-list>
-                    <v-list-tile
-                      avatar
-                      v-for="f in faqData"
-                      :key="f.title"
-                      @click="todoStatus"
-                    >
+                    <v-list-tile avatar v-for="f in faqData" :key="f.title" @click="todoStatus">
                       <v-list-tile-avatar>
                         <v-icon :class="[f.iconClass]">{{ f.icon }}</v-icon>
                       </v-list-tile-avatar>
 
                       <v-list-tile-content>
                         <v-list-tile-title v-text="f.title"></v-list-tile-title>
-                        <v-list-tile-sub-title v-text="f.subtitle"></v-list-tile-sub-title>
+                        <!-- <v-list-tile-sub-title v-text="f.subtitle"></v-list-tile-sub-title> -->
                       </v-list-tile-content>
 
                       <v-list-tile-action>
                         <v-btn icon ripple>
-                          <v-icon color="grey lighten-1">info</v-icon>
+                          <v-icon color="grey lighten-1">chevron_right</v-icon>
                         </v-btn>
                       </v-list-tile-action>
                     </v-list-tile>
@@ -79,24 +75,19 @@
                 <h3 class="m-0">Videos</h3>
                 <div>
                   <v-list>
-                    <v-list-tile
-                      avatar
-                      v-for="f in videosData"
-                      :key="f.title"
-                      @click="todoStatus"
-                    >
+                    <v-list-tile avatar v-for="f in videosData" :key="f.title" @click="todoStatus">
                       <v-list-tile-avatar>
                         <v-icon :class="[f.iconClass]">{{ f.icon }}</v-icon>
                       </v-list-tile-avatar>
 
                       <v-list-tile-content>
                         <v-list-tile-title v-text="f.title"></v-list-tile-title>
-                        <v-list-tile-sub-title v-text="f.subtitle"></v-list-tile-sub-title>
+                        <!-- <v-list-tile-sub-title v-text="f.subtitle"></v-list-tile-sub-title> -->
                       </v-list-tile-content>
 
                       <v-list-tile-action>
                         <v-btn icon ripple>
-                          <v-icon color="grey lighten-1">info</v-icon>
+                          <v-icon color="grey lighten-1">chevron_right</v-icon>
                         </v-btn>
                       </v-list-tile-action>
                     </v-list-tile>
@@ -112,26 +103,24 @@
               <v-flex xs12>
                 <h3 class="m-0">Links</h3>
                 <div>
-                  <v-autocomplete
-                    v-model="model"
-                    :hint="!isEditing ? 'Click the icon to edit' : 'Click the icon to save'"
-                    :items="states"
-                    :readonly="!isEditing"
-                    :label="`Search`"
-                    persistent-hint
-                    prepend-icon="search"
-                  >
-                    <template v-slot:append-outer>
-                      <v-slide-x-reverse-transition mode="out-in">
-                        <v-icon
-                          :key="`icon-${isEditing}`"
-                          :color="isEditing ? 'success' : 'info'"
-                          @click="isEditing = !isEditing"
-                          v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
-                        ></v-icon>
-                      </v-slide-x-reverse-transition>
-                    </template>
-                  </v-autocomplete>
+                  <v-list>
+                    <v-list-tile avatar v-for="f in linksData" :key="f.title" @click="todoStatus">
+                      <v-list-tile-avatar>
+                        <v-icon :class="[f.iconClass]">{{ f.icon }}</v-icon>
+                      </v-list-tile-avatar>
+
+                      <v-list-tile-content>
+                        <v-list-tile-title v-text="f.title"></v-list-tile-title>
+                        <!-- <v-list-tile-sub-title v-text="f.subtitle"></v-list-tile-sub-title> -->
+                      </v-list-tile-content>
+
+                      <v-list-tile-action>
+                        <v-btn icon ripple>
+                          <v-icon color="grey lighten-1">chevron_right</v-icon>
+                        </v-btn>
+                      </v-list-tile-action>
+                    </v-list-tile>
+                  </v-list>
                 </div>
               </v-flex>
             </v-card-title>
@@ -151,25 +140,25 @@ export default {
       documentsData: [
         {
           icon: "folder",
-          iconClass: "grey lighten-1 white--text",
+          iconClass: "",
           title: "Folder",
           subtitle: "Jan 9, 2014"
         },
         {
           icon: "folder",
-          iconClass: "grey lighten-1 white--text",
+          iconClass: "",
           title: "Folder 2",
           subtitle: "Jan 17, 2014"
         },
         {
           icon: "description",
-          iconClass: "grey lighten-1 white--text",
+          iconClass: "",
           title: "Document",
           subtitle: "Jan 17, 2014"
         },
         {
           icon: "description",
-          iconClass: "grey lighten-1 white--text",
+          iconClass: "",
           title: "Document copy",
           subtitle: "Jan 28, 2014"
         }
@@ -177,71 +166,71 @@ export default {
       faqData: [
         {
           icon: "help",
-          iconClass: "grey lighten-1 white--text",
+          iconClass: "",
           title: "Activations",
           subtitle: "Jan 9, 2014"
         },
         {
           icon: "help",
-          iconClass: "grey lighten-1 white--text",
+          iconClass: "",
           title: "Sistem monitoring",
           subtitle: "Jan 17, 2014"
         },
         {
           icon: "help",
-          iconClass: "grey lighten-1 white--text",
+          iconClass: "",
           title: "Billing",
           subtitle: "Jan 17, 2014"
         },
         {
           icon: "help",
-          iconClass: "grey lighten-1 white--text",
+          iconClass: "",
           title: "Tentants/Renters",
           subtitle: "Jan 28, 2014"
         }
       ],
       videosData: [
         {
-          icon: "play_arrow",
-          iconClass: "grey lighten-1 white--text",
+          icon: "play_circle_filled",
+          iconClass: "",
           title: "Getting started",
           subtitle: "Jan 9, 2014"
         },
         {
-          icon: "play_arrow",
-          iconClass: "grey lighten-1 white--text",
+          icon: "play_circle_filled",
+          iconClass: "",
           title: "First setup",
           subtitle: "Jan 17, 2014"
         },
         {
-          icon: "play_arrow",
-          iconClass: "grey lighten-1 white--text",
+          icon: "play_circle_filled",
+          iconClass: "",
           title: "How to check your Dashboard",
           subtitle: "Jan 17, 2014"
         },
         {
-          icon: "play_arrow",
-          iconClass: "grey lighten-1 white--text",
+          icon: "play_circle_filled",
+          iconClass: "",
           title: "Paying online",
           subtitle: "Jan 28, 2014"
         }
       ],
       linksData: [
         {
-          icon: "folder",
-          iconClass: "grey lighten-1 white--text",
+          icon: "info",
+          iconClass: "",
           title: "Info on how to save energy",
           subtitle: "Jan 9, 2014"
         },
         {
-          icon: "folder",
-          iconClass: "grey lighten-1 white--text",
+          icon: "info",
+          iconClass: "",
           title: "Renewable energy is here to stay",
           subtitle: "Jan 17, 2014"
         },
         {
-          icon: "folder",
-          iconClass: "grey lighten-1 white--text",
+          icon: "info",
+          iconClass: "",
           title: "From the sun to your kitchen",
           subtitle: "Jan 17, 2014"
         }
@@ -319,6 +308,24 @@ export default {
 };
 </script>
 
-// <style lang="scss" scoped>
-//
+<style lang="scss">
+main.v-content {
+  .help-search {
+    width: 100%;
+  }
+  .v-list {
+    margin: 0px -20px -16px -8px;
+  }
+  a.v-list__tile.v-list__tile--link.v-list__tile--avatar {
+    padding: 0;
+  }
+
+  .v-list > div:not(:last-of-type) {
+    .v-list__tile.v-list__tile--link .v-list__tile__content,
+    .v-list__tile__content
+      ~ .v-list__tile__action:not(.v-list__tile__action--stack) {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
 </style>

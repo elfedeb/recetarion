@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       menuItems: [
-        { icon: "home", title: "Home", link: "/" },
+        { icon: "home", title: "Home", link: "/home" },
         { icon: "check_circle", title: "To-do", link: "/to-do" },
         { icon: "account_circle", title: "Profile", link: "/profile" },
         { icon: "help", title: "Help", link: "/help" }

@@ -21,8 +21,8 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn flat>Pay bill</v-btn>
-      <v-btn flat to="/home">Sign in</v-btn>
+      <v-btn flat to="/home">Pay bill</v-btn>
+      <!-- <v-btn flat to="/home">Sign in</v-btn> -->
     </v-toolbar-items>
   </v-toolbar>
 </template>
@@ -44,6 +44,9 @@ export default {
   .sunstreet-logo {
     height: 30px;
     margin-top: 8px;
+    @media screen and (max-width: 600px) {
+      height: 24px;
+    }
   }
 }
 .title {
