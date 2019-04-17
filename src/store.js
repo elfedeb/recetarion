@@ -10,6 +10,9 @@ export default new Vuex.Store({
   mutations: {
     toggleMenu (state) {
       state.menu = (state.menu) ? false : true;
+    },
+    setMenu(state, menu) {
+      state.menu = menu;
     }
   },
   actions: {

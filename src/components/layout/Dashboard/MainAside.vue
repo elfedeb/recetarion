@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer clipped fixed v-model="menu" app>
+  <v-navigation-drawer clipped fixed v-model="menuModel" app>
     <span class="brand-image">
       <svg class="svg-icon sunstreet-svg" viewBox="0 0 50 50" aria-hidden="true">
         <path
@@ -27,14 +27,23 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 
 export default {
   name: "MainAside",
+  methods: {
+    ...mapMutations(['setMenu'])
+  },
   computed: {
-    ...mapState({
-      menu: state => state.menu
-    })
+    ...mapState(['menu']),
+    menuModel: {
+      set(menu) {
+        this.setMenu(menu);
+      },
+      get() {
+        return this.menu;
+      }
+    }
   },
   data() {
     return {
