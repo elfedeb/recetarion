@@ -45,6 +45,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h3 {
+  color: #172251;
+  margin-bottom: 3vh;
+}
 .v-form {
   margin: 3rem 0 3rem 5.4rem;
 }

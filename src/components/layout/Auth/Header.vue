@@ -2,7 +2,7 @@
   <v-toolbar app light fixed clipped-left class="main-header">
     <v-toolbar-title>
       <a
-        href="https://sunstreet.com/"
+        href="/"
         title="Sunstreet.com — Affordable solar technology"
         target="_blank"
       >
