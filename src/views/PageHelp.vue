@@ -1,6 +1,65 @@
 <template>
   <v-container fluid grid-list-lg>
-    
+    <v-layout row fill-height wrap>
+      <div class="column flex xs12">
+        <div class="flex">
+          <v-card flat flex xs12>
+            <v-card-title primary-title>
+              <v-flex xs12>
+                <h3 class="m-0">Help</h3>
+
+                <v-layout row fill-height wrap>
+                  <v-flex sm6>
+                    <v-autocomplete
+                      box
+                      v-model="helpmodel"
+                      :items="helpitems"
+                      :label="`Find help... `"
+                      hide-no-data
+                      prepend-inner-icon="search"
+                    >
+                      <template v-slot:append-outer>
+                        <v-slide-x-reverse-transition mode="out-in">
+                          <v-icon
+                            :key="`icon-${isEditing}`"
+                            :color="isEditing ? 'success' : 'info'"
+                            @click="isEditing = !isEditing"
+                            v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
+                          ></v-icon>
+                        </v-slide-x-reverse-transition>
+                      </template>
+                    </v-autocomplete>
+                  </v-flex>
+                  <v-flex xs12 sm3 d-flex>
+                    <v-autocomplete
+                      box
+                      v-model="docmodel"
+                      :items="doctype"
+                      :label="`Type`"
+                      hide-no-data
+                      hide-details
+                    >
+                    </v-autocomplete>
+                  </v-flex>
+
+                  <v-flex xs12 sm3 d-flex>
+                    <v-autocomplete
+                      box
+                      v-model="sortmodel"
+                      :items="sorttype"
+                      :label="`Sort by`"
+                      hide-no-data
+                      hide-details
+                    >
+                    </v-autocomplete>
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+            </v-card-title>
+          </v-card>
+        </div>
+      </div>
+    </v-layout>
     <v-layout row fill-height wrap>
       <div class="column flex m4">
         <div class="flex">
@@ -236,67 +295,15 @@ export default {
         }
       ],
       isEditing: false,
-      model: null,
-      states: [
-        "Alabama",
-        "Alaska",
-        "American Samoa",
-        "Arizona",
-        "Arkansas",
-        "California",
-        "Colorado",
-        "Connecticut",
-        "Delaware",
-        "District of Columbia",
-        "Federated States of Micronesia",
-        "Florida",
-        "Georgia",
-        "Guam",
-        "Hawaii",
-        "Idaho",
-        "Illinois",
-        "Indiana",
-        "Iowa",
-        "Kansas",
-        "Kentucky",
-        "Louisiana",
-        "Maine",
-        "Marshall Islands",
-        "Maryland",
-        "Massachusetts",
-        "Michigan",
-        "Minnesota",
-        "Mississippi",
-        "Missouri",
-        "Montana",
-        "Nebraska",
-        "Nevada",
-        "New Hampshire",
-        "New Jersey",
-        "New Mexico",
-        "New York",
-        "North Carolina",
-        "North Dakota",
-        "Northern Mariana Islands",
-        "Ohio",
-        "Oklahoma",
-        "Oregon",
-        "Palau",
-        "Pennsylvania",
-        "Puerto Rico",
-        "Rhode Island",
-        "South Carolina",
-        "South Dakota",
-        "Tennessee",
-        "Texas",
-        "Utah",
-        "Vermont",
-        "Virgin Island",
-        "Virginia",
-        "Washington",
-        "West Virginia",
-        "Wisconsin",
-        "Wyoming"
+      helpmodel: null,
+      docmodel: null,
+      sortmodel: null,
+      doctype: ["Document", "Image", "Spreadsheet", "PDF"],
+      sorttype: ["Ascending", "Descending", "Alphabetical"],
+      helpitems: [
+        "FAQ",
+        "How to login",
+        "How to sign up"
       ]
     };
   },
