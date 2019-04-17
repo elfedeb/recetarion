@@ -162,29 +162,29 @@
     </v-stepper>
 
     <v-dialog v-model="dialog" max-width="592">
-      <v-card>
-        <v-card-text>
-          <div class="embed-video-container">
-            <iframe
-              src="https://www.youtube.com/embed/d4UUKB4buVc"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </v-card-text>
-      </v-card>
+      <videoPlayer :header="videoItems.header" :url="videoItems.url" :info="videoItems.info" />
     </v-dialog>
+
   </div>
 </template>
 
 <script>
+import VideoPlayer from "@/components/ui/VideoPlayer.vue";
+
 export default {
   name: "BaseStepper",
+  components: {
+    VideoPlayer
+  },
   data() {
     return {
       // opens third page
       pageActivation: 2,
+      videoItems: {
+        header: 'Video header',
+        url: 'https://www.youtube.com/embed/d4UUKB4buVc',
+        info: 'Info about this video below to explain features',
+      },
       dialog: false,
       alert: true
     };

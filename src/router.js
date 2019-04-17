@@ -18,25 +18,25 @@ export default new Router({
         {
           path: "/home",
           name: "home",
-          component: () => import("./views/PageHome.vue"),
+          component: () => import("./views/Dashboard/PageHome.vue"),
           meta: { pageTitle: 'Home' }
         },
         {
           path: "/to-do",
           name: "todo-lists",
-          component: () => import("./views/PageToDos.vue"),
+          component: () => import("./views/Dashboard/PageToDos.vue"),
           meta: { pageTitle: 'To-do' }
         },
         {
           path: "/profile",
           name: "profile",
-          component: () => import("./views/PageProfile.vue"),
+          component: () => import("./views/Dashboard/PageProfile.vue"),
           meta: { pageTitle: 'Profile' }
         },
         {
           path: "/help",
           name: "help",
-          component: () => import("./views/PageHelp.vue"),
+          component: () => import("./views/Dashboard/PageHelp.vue"),
           meta: { pageTitle: 'Help'  }
         }
       ]
@@ -50,7 +50,7 @@ export default new Router({
         {
           path: "/auth/login",
           name: "login",
-          component: () => import("./views/PageLogin.vue"),
+          component: () => import("./views/Auth/PageLogin.vue"),
           meta: { pageTitle: 'Login' }
         }
       ]
