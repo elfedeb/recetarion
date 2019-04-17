@@ -112,16 +112,7 @@
         </v-layout>
         <h3>FAQ</h3>
         <v-card flat>
-          <v-expansion-panel>
-            <v-expansion-panel-content v-for="(faq , i) in faqItems" :key="i">
-              <template v-slot:header>
-                <h4>{{ faq.question }}</h4>
-              </template>
-              <v-card>
-                <v-card-text>{{ faq.answer }}</v-card-text>
-              </v-card>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
+          <FAQExpansion :items="faqItems" />
         </v-card>
       </v-stepper-content>
       <!------------------------------------------->
@@ -169,10 +160,12 @@
 
 <script>
 import VideoPlayer from "@/components/ui/VideoPlayer.vue";
+import FAQExpansion from "@/components/ui/FAQExpansion.vue";
 
 export default {
   name: "BaseStepper",
   components: {
+    FAQExpansion,
     VideoPlayer
   },
   data() {

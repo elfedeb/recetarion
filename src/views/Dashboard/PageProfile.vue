@@ -73,16 +73,7 @@
               </v-flex>
               <v-flex xs12>
                 <v-card flat>
-                  <v-expansion-panel>
-                    <v-expansion-panel-content v-for="(item,i) in 5" :key="i">
-                      <template v-slot:header>
-                        <h4>FAQ title</h4>
-                      </template>
-                      <v-card>
-                        <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
-                      </v-card>
-                    </v-expansion-panel-content>
-                  </v-expansion-panel>
+                  <FAQExpansion :items="faqItems" />
                 </v-card>
               </v-flex>
             </v-card-title>
@@ -95,8 +86,13 @@
   
 
 <script>
+import FAQExpansion from "@/components/ui/FAQExpansion.vue";
+
 export default {
   name: "PageProfile",
+  components: {
+    FAQExpansion
+  },
   data() {
     return {
       myInfoData: [
@@ -120,11 +116,15 @@ export default {
         { label: "Address", info: "11543 Sunstreet Irvine, CA 92618" },
         { label: "Update by", info: "Email" }
       ],
-      faqData: [
-        { label: "Email", info: "rmontgomery@gmail.com" },
-        { label: "Phone", info: "(949) 123-4567" },
-        { label: "Address", info: "11543 Sunstreet Irvine, CA 92618" },
-        { label: "Update by", info: "Email" }
+      faqItems: [
+        {
+          question: "What is one plus one?",
+          answer: "Forty two"
+        },
+        {
+          question: "Where can I get a real question?",
+          answer: "By intersecting different curiosities and realities"
+        }
       ],
       isEditing: false,
       helpmodel: null,
