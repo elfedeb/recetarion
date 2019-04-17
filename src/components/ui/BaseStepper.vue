@@ -113,12 +113,12 @@
         <h3>FAQ</h3>
         <v-card flat>
           <v-expansion-panel>
-            <v-expansion-panel-content v-for="(item,i) in 5" :key="i">
+            <v-expansion-panel-content v-for="(faq , i) in faqItems" :key="i">
               <template v-slot:header>
-                <h4>FAQ title</h4>
+                <h4>{{ faq.question }}</h4>
               </template>
               <v-card>
-                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
+                <v-card-text>{{ faq.answer }}</v-card-text>
               </v-card>
             </v-expansion-panel-content>
           </v-expansion-panel>
@@ -162,9 +162,8 @@
     </v-stepper>
 
     <v-dialog v-model="dialog" max-width="592">
-      <videoPlayer :header="videoItems.header" :url="videoItems.url" :info="videoItems.info" />
+      <videoPlayer :header="videoItems.header" :url="videoItems.url" :info="videoItems.info"/>
     </v-dialog>
-
   </div>
 </template>
 
@@ -181,10 +180,20 @@ export default {
       // opens third page
       pageActivation: 2,
       videoItems: {
-        header: 'Video header',
-        url: 'https://www.youtube.com/embed/d4UUKB4buVc',
-        info: 'Info about this video below to explain features',
+        header: "Video header",
+        url: "https://www.youtube.com/embed/d4UUKB4buVc",
+        info: "Info about this video below to explain features"
       },
+      faqItems: [
+        {
+          question: "What is one plus one?",
+          answer: "Forty two"
+        },
+        {
+          question: "Where can I get a real question?",
+          answer: "By intersecting different curiosities and realities"
+        }
+      ],
       dialog: false,
       alert: true
     };
