@@ -52,7 +52,19 @@ export default new Router({
           name: "login",
           component: () => import("./views/Auth/PageLogin.vue"),
           meta: { pageTitle: 'Login' }
-        }
+        },
+        {
+          path: "/auth/access",
+          name: "access",
+          component: () => import("./views/Auth/PageAccess.vue"),
+          meta: { pageTitle: 'Access' }
+        },
+        {
+          path: "/auth/create-account",
+          name: "createAccount",
+          component: () => import("./views/Auth/PageCreateAccount.vue"),
+          meta: { pageTitle: 'Create Account' }
+        },
       ]
     },
     {

@@ -3,19 +3,22 @@
     <v-form>
       <v-container>
         <v-layout>
-          <v-card>
+          <v-card class="login-box">
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 primary-title class="m-0 primary-text">Sign in to SunStreet</h3>
+                <h3 primary-title class="m-0 primary-text">Enter access code</h3>
                 <div>
-                  <v-text-field outline label="Username" required></v-text-field>
-
-                  <v-text-field :type="'password'" outline label="Password" required></v-text-field>
+                  <v-text-field
+                    label="Access code"
+                    hint="Enter your 12-digit access code from your email"
+                    outline
+                    clearable
+                  ></v-text-field>
                 </div>
               </v-flex>
-
               <v-layout class="button-holder">
-                <v-btn large color="primary" to="/auth/create-account">Next</v-btn>
+                <v-btn large flat to="/auth/login">Sign in</v-btn>
+                <v-btn large color="primary" to="/">Next</v-btn>
               </v-layout>
             </v-card-title>
             <hr>
@@ -35,10 +38,10 @@
 <script>
 export default {
   mounted: function() {
-    document.body.classList.add('login-page')
+    document.body.classList.add("login-page");
   },
   destroyed: function() {
-    document.body.classList.remove('login-page')
+    document.body.classList.remove("login-page");
   },
   data: () => ({
     languages: ["English", "Spanish"]

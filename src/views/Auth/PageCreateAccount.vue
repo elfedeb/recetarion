@@ -3,19 +3,29 @@
     <v-form>
       <v-container>
         <v-layout>
-          <v-card>
+          <v-card class="login-box">
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 primary-title class="m-0 primary-text">Sign in to SunStreet</h3>
-                <div>
-                  <v-text-field outline label="Username" required></v-text-field>
+                <h3 primary-title>
+                  <a href="/auth/login">
+                    <v-icon>arrow_back</v-icon>
+                  </a> Create your account
+                </h3>
+                <v-flex xs12>
+                  <v-text-field label="First name" required outline></v-text-field>
+                </v-flex>
 
-                  <v-text-field :type="'password'" outline label="Password" required></v-text-field>
-                </div>
+                <v-flex xs12>
+                  <v-text-field label="Last name" required outline></v-text-field>
+                </v-flex>
+
+                <v-flex xs12>
+                  <v-text-field label="E-mail" required outline></v-text-field>
+                </v-flex>
               </v-flex>
-
               <v-layout class="button-holder">
-                <v-btn large color="primary" to="/auth/create-account">Next</v-btn>
+                <v-btn large flat to="/auth/login">Save & Exit</v-btn>
+                <v-btn large color="primary" to="/auth/access">Next</v-btn>
               </v-layout>
             </v-card-title>
             <hr>
@@ -34,12 +44,6 @@
 
 <script>
 export default {
-  mounted: function() {
-    document.body.classList.add('login-page')
-  },
-  destroyed: function() {
-    document.body.classList.remove('login-page')
-  },
   data: () => ({
     languages: ["English", "Spanish"]
   })
@@ -54,9 +58,18 @@ export default {
 h3 {
   color: #172251;
   margin-bottom: 3vh;
+  position: relative;
+  a {
+    top: 3px;
+    position: relative;
+    .v-icon {
+      color: #172251;
+      caret-color: #172251;
+    }
+  }
 }
 .v-form {
-  margin: 3rem 0 3rem 5.4rem;
+  margin: 3rem auto;
 }
 
 .v-card {
