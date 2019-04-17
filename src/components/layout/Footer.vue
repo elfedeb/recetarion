@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark app fixed class=footer>
+  <v-footer dark class=footer>
     <v-flex>
       <small>&copy; 2019 SunStreet. All Rights Reserved.</small>
     </v-flex>
