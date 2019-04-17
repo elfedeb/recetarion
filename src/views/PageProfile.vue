@@ -1,7 +1,7 @@
 <template>
   <v-container fluid grid-list-lg>
     <v-layout row fill-height wrap>
-      <div class="column flex m4">
+      <div class="column flex sm6">
         <div class="flex">
           <v-card flat flex xs12>
             <v-card-title primary-title>
@@ -37,7 +37,7 @@
           </v-card>
         </div>
       </div>
-      <div class="column flex m4">
+      <div class="column flex sm6">
         <div class="flex">
           <v-card flat flex xs12>
             <v-card-title primary-title>
@@ -60,15 +60,30 @@
             <v-card-title primary-title>
               <v-flex xs12>
                 <h3 class="m-0">FAQ</h3>
-                <div>
+                <v-flex>
                   <v-autocomplete
-                    v-model="model"
+                    box
+                    v-model="helpmodel"
                     :items="helpitems"
                     :label="`Search`"
-                    persistent-hint
-                    prepend-icon="search"
+                    hide-no-data
+                    prepend-inner-icon="search"
                   ></v-autocomplete>
-                </div>
+                </v-flex>
+              </v-flex>
+              <v-flex xs12>
+                <v-card flat>
+                  <v-expansion-panel>
+                    <v-expansion-panel-content v-for="(item,i) in 5" :key="i">
+                      <template v-slot:header>
+                        <h4>FAQ title</h4>
+                      </template>
+                      <v-card>
+                        <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
+                      </v-card>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-card>
               </v-flex>
             </v-card-title>
           </v-card>
@@ -96,7 +111,7 @@ export default {
         { label: "Community", info: "Eclipse at Altair" },
         { label: "Location", info: "Roundabout St. Sesame" },
         { label: "Panels", info: "5" },
-        { label: "Price", info: "$4,50" },
+        { label: "Price", info: "$4,500" },
         { label: "Program", info: "Buy the power" }
       ],
       contactData: [
@@ -112,7 +127,7 @@ export default {
         { label: "Update by", info: "Email" }
       ],
       isEditing: false,
-      model: null,
+      helpmodel: null,
       helpitems: ["FAQ", "How to login", "How to sign up"]
     };
   },
@@ -124,18 +139,21 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+h3 + div > .v-autocomplete {
+      margin: 8px -4px 0;
+}
 main.v-content {
   .v-list {
     margin: 0 -8px;
+    > div:not(:last-of-type) {
+      border-bottom: 1px solid #ccc;
+    }
     .v-list__tile__sub-title {
       font-size: 12px;
       font-weight: 500;
       text-transform: uppercase;
-    }
-
-    > div:not(:last-of-type) {
-      border-bottom: 1px solid #ccc;
     }
   }
   .v-list__tile {
