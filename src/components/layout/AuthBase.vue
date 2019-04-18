@@ -20,12 +20,18 @@ export default {
     MainSection,
     Footer
   },
-  data() {
-    return {
-    }
-  }
+  mounted: function() {
+    document.body.classList.add("login-page");
+  },
+  destroyed: function() {
+    document.body.classList.remove("login-page");
+  },
+  data: () => ({
+    languages: ["English", "Spanish"]
+  })
 };
 </script>
+
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
 .main {
