@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
+import VeeValidate from 'vee-validate';
 import '@/assets/stylus/variants.styl';
 
 Vue.use(Vuetify, {
@@ -10,4 +11,5 @@ Vue.use(Vuetify, {
     accent: '#8c9eff',
     error: '#b71c1c'
   }
-});
+},
+VeeValidate);

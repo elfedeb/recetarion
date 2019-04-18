@@ -4,7 +4,7 @@
       <v-layout justify-center align-center>
         <v-flex fill-width>
           <v-container fluid fill-height class="login-box">
-            <v-form>
+            <v-form v-model="valid">
               <v-container>
                 <v-layout>
                   <v-card>
@@ -29,8 +29,15 @@
 
 
 <script>
+import { ValidationProvider } from 'vee-validate';
 export default {
-  name: "MainSection"
+  name: "MainSection",
+  components: {
+    ValidationProvider
+  },
+  data: () => ({
+    valid: false
+  })
 };
 </script>
 
