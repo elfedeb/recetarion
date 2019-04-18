@@ -65,6 +65,12 @@ export default new Router({
           component: () => import("./views/Auth/PageCreateAccount.vue"),
           meta: { pageTitle: 'Create Account' }
         },
+        {
+          path: "/auth/add-information",
+          name: "addInformation",
+          component: () => import("./views/Auth/PageAddInformation.vue"),
+          meta: { pageTitle: 'Add more information' }
+        },
       ]
     },
     {
