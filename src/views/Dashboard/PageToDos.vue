@@ -5,7 +5,7 @@
         <v-card flat flex xs12>
           <v-card-title primary-title>
             <v-flex xs12>
-              <h3 class="m-0">To-dos</h3>
+              <h6 class="card-title">To-do</h6>
               <div>
                 <v-list>
                   <v-list-tile v-for="item in todosItems" :key="item.title" @click="todoStatus">
@@ -27,7 +27,7 @@
         <v-card flat flex xs12>
           <v-card-title primary-title>
             <v-flex xs12>
-              <h3 class="m-0">Completed</h3>
+              <h6 class="card-title">Completed tasks</h6>
               <div>
                 <v-list>
                   <v-list-tile v-for="item in doneItems" :key="item.title" @click="todoStatus">
@@ -56,7 +56,7 @@ export default {
   data() {
     return {
       todosItems: [
-        { title: "Step 01" },
+        { title: "Learn about your solar system and the SunStreet program" },
         { title: "Step 02" },
         { title: "Step 03" },
         { title: "Step 04" }
@@ -76,3 +76,24 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+main.v-content .v-list {
+  margin: 0 -24px -8px -16px;
+  padding: 0 8px;
+
+  > div {
+    margin: 0 16px 0 -4px;
+  }
+  .v-list__tile__action {
+    width: 20px;
+    margin: 0 -16px 0 0;
+  }
+  .v-list__tile {
+    padding: 0 16px 0 8px;
+  }
+  .v-list__tile.v-list__tile--link.theme--light {
+    padding: 0 0 0 8px;
+  }
+}
+</style>

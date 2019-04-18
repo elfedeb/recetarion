@@ -331,7 +331,7 @@ main.v-content {
     .v-list__tile.v-list__tile--link .v-list__tile__content,
     .v-list__tile__content
       ~ .v-list__tile__action:not(.v-list__tile__action--stack) {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #e0e0e0;
     }
   }
 }

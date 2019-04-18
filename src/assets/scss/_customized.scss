@@ -30,6 +30,24 @@ hr {
   width: 100%;
 }
 
+.card-title {
+  font-size: 1.45rem;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: -0.15px;
+  margin: -16px 0 16px 0;
+}
+
+main.v-content {
+  .v-list > div:not(:last-of-type) {
+    .v-list__tile.v-list__tile--link .v-list__tile__content,
+    .v-list__tile__content
+      ~ .v-list__tile__action:not(.v-list__tile__action--stack) {
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}
+
 aside {
   .v-list .v-list__tile--link,
   .v-list .v-list__tile--highlighted,

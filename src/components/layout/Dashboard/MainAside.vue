@@ -27,15 +27,15 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState } from "vuex";
 
 export default {
   name: "MainAside",
   methods: {
-    ...mapMutations(['setMenu'])
+    ...mapMutations(["setMenu"])
   },
   computed: {
-    ...mapState(['menu']),
+    ...mapState(["menu"]),
     menuModel: {
       set(menu) {
         this.setMenu(menu);
@@ -52,11 +52,10 @@ export default {
         { icon: "check_circle", title: "To-do", link: "/to-do" },
         { icon: "account_circle", title: "Profile", link: "/profile" },
         { icon: "help", title: "Help", link: "/help" }
-      ],
+      ]
     };
   },
-  mounted() {
-  }
+  mounted() {}
 };
 </script>
 
@@ -67,19 +66,19 @@ aside {
   flex-flow: column wrap;
   background: #fff;
   .brand-image {
-    height: 48px;
-    width: 48px;
-    margin: 28px 0 16px 28px;
+    height: auto;
+    width: 49px;
+    margin: 42px 0 16px 16px;
   }
   .user-name {
     font-size: 1.39rem;
     font-weight: 700;
     letter-spacing: 0.02rem;
-    margin-left: 28px;
-    line-height: 1.3;
+    margin-left: 16px;
+    line-height: 1.6;
   }
   .user-email {
-    margin-left: 28px;
+    margin-left: 16px;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: -0.016rem;
@@ -87,7 +86,7 @@ aside {
     color: #757575;
   }
   .v-list > div {
-    margin: 10px;
+    margin: 8px 8px 0 8px;
   }
 }
 </style>

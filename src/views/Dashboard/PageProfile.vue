@@ -6,7 +6,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">My Info</h3>
+                <h6 class="card-title">My Info</h6>
                 <div>
                   <v-list>
                     <v-list-tile v-for="f in myInfoData" :key="f.label" @click="todoStatus">
@@ -23,7 +23,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">Home Info</h3>
+                <h6 class="card-title">Home Info</h6>
                 <div>
                   <v-list>
                     <v-list-tile v-for="f in homeInfoData" :key="f.label" @click="todoStatus">
@@ -42,7 +42,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">Contact</h3>
+                <h6 class="card-title">Contact</h6>
                 <div>
                   <v-list>
                     <v-list-tile v-for="f in contactData" :key="f.label" @click="todoStatus">
@@ -59,7 +59,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">FAQ</h3>
+                <h6 class="card-title">FAQ</h6>
                 <v-flex>
                   <v-autocomplete
                     box
@@ -73,7 +73,7 @@
               </v-flex>
               <v-flex xs12>
                 <v-card flat>
-                  <FAQExpansion :items="faqItems" />
+                  <FAQExpansion :items="faqItems"/>
                 </v-card>
               </v-flex>
             </v-card-title>
@@ -140,9 +140,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 h3 + div > .v-autocomplete {
-      margin: 8px -4px 0;
+  margin: 8px -4px 0;
 }
 main.v-content {
   .v-list {
