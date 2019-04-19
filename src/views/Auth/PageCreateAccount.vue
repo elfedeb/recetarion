@@ -20,7 +20,7 @@
     </v-flex>
     <v-layout class="button-holder">
       <v-btn large flat to="/auth/login">Save & Exit</v-btn>
-      <v-btn large color="primary" to="/auth/access">Next</v-btn>
+      <v-btn large color="primary" to="/auth/login">Next</v-btn>
     </v-layout>
   </v-card-title>
 </template>
