@@ -6,7 +6,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">Help</h3>
+                <h6 class="card-title">Help</h6>
 
                 <v-layout row fill-height wrap>
                   <v-flex sm6>
@@ -66,7 +66,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">Documents</h3>
+                <h6 class="card-title">Documents</h6>
                 <div>
                   <v-list>
                     <v-list-tile
@@ -100,7 +100,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">FAQ</h3>
+                <h6 class="card-title">FAQ</h6>
                 <div>
                   <v-list>
                     <v-list-tile avatar v-for="f in faqData" :key="f.title" @click="todoStatus">
@@ -131,7 +131,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">Videos</h3>
+                <h6 class="card-title">Videos</h6>
                 <div>
                   <v-list>
                     <v-list-tile avatar v-for="f in videosData" :key="f.title" @click="todoStatus">
@@ -160,7 +160,7 @@
           <v-card flat flex xs12>
             <v-card-title primary-title>
               <v-flex xs12>
-                <h3 class="m-0">Links</h3>
+                <h6 class="card-title">Links</h6>
                 <div>
                   <v-list>
                     <v-list-tile avatar v-for="f in linksData" :key="f.title" @click="todoStatus">
