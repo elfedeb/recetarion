@@ -65,6 +65,7 @@ aside {
   display: flex;
   flex-flow: column wrap;
   background: #fff;
+  width: 256px;
   .brand-image {
     height: auto;
     width: 49px;

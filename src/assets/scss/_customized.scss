@@ -143,7 +143,7 @@ aside {
 
 .section {
   .container.fluid.fill-height.fill-width {
-    margin: 16px 8px;
+    margin: 8px;
   }
 }
 
@@ -162,4 +162,18 @@ aside {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.v-card {
+  .v-expansion-panel {
+    background: transparent;
+    box-shadow: none;
+    .v-expansion-panel__container {
+      background: transparent;
+    }
+    h4 {
+      color: #313a64;
+      margin-left: -8px;
+    }
+  }
 }
