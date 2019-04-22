@@ -4,7 +4,7 @@
       <div class="column flex xs12">
         <div class="flex">
           <v-card flat flex xs12>
-            <v-breadcrumbs :items="breadcrumbs">
+            <v-breadcrumbs :items="data.breadcrumbs">
               <template v-slot:divider>
                 <v-icon>chevron_right</v-icon>
               </template>
@@ -18,19 +18,19 @@
             <v-card-title class="faq-card">
               <h3>Billing</h3>
               <v-card flat>
-                <FAQExpansion :items="faqItems"/>
+                <FAQExpansion :items="data.billing"/>
               </v-card>
             </v-card-title>
             <v-card-title class="faq-card">
               <h3>Activation</h3>
               <v-card flat>
-                <FAQExpansion :items="faqItems"/>
+                <FAQExpansion :items="data.activation"/>
               </v-card>
             </v-card-title>
             <v-card-title class="faq-card">
               <h3>Installation</h3>
               <v-card flat>
-                <FAQExpansion :items="faqItems"/>
+                <FAQExpansion :items="data.installation"/>
               </v-card>
             </v-card-title>
           </v-card>
@@ -43,7 +43,8 @@
 
 <script>
 import FAQExpansion from "@/components/ui/FAQExpansion.vue";
-import dataFAQ from "@/data/data-faq.js";
+// import dataFAQ from "@/data/data-faq.js";
+import dataFAQ from "@/data/data-faq-full.js";
 
 export default {
   name: "PageHelpFAQ",
@@ -52,19 +53,8 @@ export default {
   },
   data() {
     return {
-      faqItems: dataFAQ,
+      data: dataFAQ,
       selectedCategory: this.$route.query.tag,
-      breadcrumbs: [
-        {
-          text: "Help",
-          disabled: false,
-          href: "/help"
-        },
-        {
-          text: "FAQ",
-          disabled: true
-        }
-      ]
     };
   }
 };
