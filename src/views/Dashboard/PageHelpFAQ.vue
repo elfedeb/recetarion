@@ -61,7 +61,7 @@ export default {
           href: "/help"
         },
         {
-          text: "Documents",
+          text: "FAQ",
           disabled: true
         }
       ]
@@ -70,7 +70,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .theme--light.v-breadcrumbs {
   a {
     font-size: 16px;
@@ -84,7 +84,6 @@ export default {
     font-weight: 700;
   }
 }
-
 
 .help-card-filter-header {
   padding: 12px !important;

@@ -14,7 +14,3 @@
     </v-layout>
   </v-card-title>
 </template>
-
-
-<style lang="scss" scoped>
-</style>

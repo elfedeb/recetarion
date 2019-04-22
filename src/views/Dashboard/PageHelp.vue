@@ -38,8 +38,7 @@
                       :label="`Type`"
                       hide-no-data
                       hide-details
-                    >
-                    </v-autocomplete>
+                    ></v-autocomplete>
                   </v-flex>
 
                   <v-flex xs12 sm3 d-flex>
@@ -50,8 +49,7 @@
                       :label="`Sort by`"
                       hide-no-data
                       hide-details
-                    >
-                    </v-autocomplete>
+                    ></v-autocomplete>
                   </v-flex>
                 </v-layout>
               </v-flex>
@@ -103,7 +101,7 @@
                 <h6 class="card-title">FAQ</h6>
                 <div>
                   <v-list>
-                    <v-list-tile avatar v-for="f in faqData" :key="f.title" @click="todoStatus">
+                    <v-list-tile avatar v-for="f in faqData" :key="f.title" :to="f.link">
                       <v-list-tile-avatar>
                         <v-icon :class="[f.iconClass]">{{ f.icon }}</v-icon>
                       </v-list-tile-avatar>
@@ -227,25 +225,29 @@ export default {
           icon: "help",
           iconClass: "",
           title: "Activations",
-          subtitle: "Jan 9, 2014"
+          subtitle: "Jan 9, 2014",
+          link: "/help/faq"
         },
         {
           icon: "help",
           iconClass: "",
           title: "Sistem monitoring",
-          subtitle: "Jan 17, 2014"
+          subtitle: "Jan 17, 2014",
+          link: "/help/faq"
         },
         {
           icon: "help",
           iconClass: "",
           title: "Billing",
-          subtitle: "Jan 17, 2014"
+          subtitle: "Jan 17, 2014",
+          link: "/help/faq"
         },
         {
           icon: "help",
           iconClass: "",
           title: "Tentants/Renters",
-          subtitle: "Jan 28, 2014"
+          subtitle: "Jan 28, 2014",
+          link: "/help/faq"
         }
       ],
       videosData: [
@@ -300,11 +302,7 @@ export default {
       sortmodel: null,
       doctype: ["Document", "Image", "Spreadsheet", "PDF"],
       sorttype: ["Ascending", "Descending", "Alphabetical"],
-      helpitems: [
-        "FAQ",
-        "How to login",
-        "How to sign up"
-      ]
+      helpitems: ["FAQ", "How to login", "How to sign up"]
     };
   },
   methods: {
@@ -315,18 +313,29 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main.v-content {
   .help-search {
     width: 100%;
   }
   .v-list {
     margin: 0px -20px -16px -8px;
-  }
-  a.v-list__tile.v-list__tile--link.v-list__tile--avatar {
-    padding: 0;
+    padding: 0 8px;
+    > div {
+      margin: 0 -8px 0 -12px;
+    }
+    /deep/ a.v-list__tile {
+      padding: 0 16px 0 8px;
+    }
   }
 
+  .v-list__tile__action {
+    width: 20px;
+    margin: 0 -16px 0 0;
+    .v-btn--icon {
+      margin: -6px 8px -6px -6px;
+    }
+  }
   .v-list > div:not(:last-of-type) {
     .v-list__tile.v-list__tile--link .v-list__tile__content,
     .v-list__tile__content
@@ -335,4 +344,6 @@ main.v-content {
     }
   }
 }
+
 </style>
+
