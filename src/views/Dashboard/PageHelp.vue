@@ -226,28 +226,28 @@ export default {
           iconClass: "",
           title: "Activations",
           subtitle: "Jan 9, 2014",
-          link: "/help/faq"
+          link: "/help/faq?tag=activation"
         },
         {
           icon: "help",
           iconClass: "",
           title: "Sistem monitoring",
           subtitle: "Jan 17, 2014",
-          link: "/help/faq"
+          link: "/help/faq?tag=sistem_monitoring"
         },
         {
           icon: "help",
           iconClass: "",
           title: "Billing",
           subtitle: "Jan 17, 2014",
-          link: "/help/faq"
+          link: "/help/faq?tag=billing"
         },
         {
           icon: "help",
           iconClass: "",
           title: "Tentants/Renters",
           subtitle: "Jan 28, 2014",
-          link: "/help/faq"
+          link: "/help/faq?tag=tenants"
         }
       ],
       videosData: [
