@@ -31,7 +31,7 @@
                 <h6 class="card-title">Home Info</h6>
                 <div>
                   <v-list>
-                    <v-list-tile v-for="f in homeInfoData" :key="f.label" @click="todoStatus">
+                    <v-list-tile v-for="f in homeInfoData" :key="f.label">
                       <v-list-tile-sub-title v-text="f.label"></v-list-tile-sub-title>
                       <v-list-tile-title v-text="f.info"></v-list-tile-title>
                     </v-list-tile>
@@ -61,9 +61,14 @@
                 <h6 class="card-title">Contact</h6>
                 <div>
                   <v-list>
-                    <v-list-tile v-for="f in contactData" :key="f.label" @click="todoStatus">
+                    <v-list-tile v-for="f in contactData" :key="f.label">
                       <v-list-tile-sub-title v-text="f.label"></v-list-tile-sub-title>
                       <v-list-tile-title v-text="f.info"></v-list-tile-title>
+                      <v-list-tile-action v-if="f.editable" @click.stop="dialog = true">
+                        <v-btn icon ripple>
+                          <v-icon color="grey lighten-1">edit</v-icon>
+                        </v-btn>
+                      </v-list-tile-action>
                     </v-list-tile>
                   </v-list>
                 </div>
@@ -176,10 +181,10 @@ export default {
         { label: "Program", info: "Buy the power" }
       ],
       contactData: [
-        { label: "Email", info: "rmontgomery@gmail.com" },
-        { label: "Phone", info: "(949) 123-4567" },
-        { label: "Address", info: "11543 Sunstreet Irvine, CA 92618" },
-        { label: "Update by", info: "Email" }
+        { label: "Email", info: "rmontgomery@gmail.com", editable: true },
+        { label: "Phone", info: "(949) 123-4567", editable: true },
+        { label: "Address", info: "11543 Sunstreet Irvine, CA 92618", editable: true },
+        { label: "Update by", info: "Email", editable: true }
       ],
       faqItems: [
         {
