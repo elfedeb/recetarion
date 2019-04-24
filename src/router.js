@@ -1,11 +1,14 @@
 import Vue from "vue";
 import Router from "vue-router";
 import DashboardBase from "@/components/layout/DashboardBase.vue";
-import AuthBase from "@/components/layout/AuthBase.vue";
+import AuthBase from "@/views/Auth/AuthBase.vue";
+import Auth from '@aws-amplify/auth';
+import { AmplifyEventBus } from 'aws-amplify-vue';
+import store from './store'
 
 Vue.use(Router);
 
-export default new Router({
+var router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -19,35 +22,36 @@ export default new Router({
           path: "/home",
           name: "home",
           component: () => import("./views/Dashboard/PageHome.vue"),
-          meta: { pageTitle: "Home" }
+          meta: { pageTitle: "Home", requiresAuth: true }
         },
         {
           path: "/to-do",
           name: "todo-lists",
           component: () => import("./views/Dashboard/PageToDos.vue"),
-          meta: { pageTitle: "To-do" }
+          meta: { pageTitle: "To-do", requiresAuth: true }
         },
         {
           path: "/profile",
           name: "profile",
           component: () => import("./views/Dashboard/PageProfile.vue"),
-          meta: { pageTitle: "Profile" }
+          meta: { pageTitle: "Profile", requiresAuth: true }
         },
         {
           path: "/help",
           name: "help",
           component: () => import("./views/Dashboard/PageHelp.vue"),
-          meta: { pageTitle: "Help" }
+          meta: { pageTitle: "Help", requiresAuth: true }
         },
         {
           path: "/help/faq",
           name: "faqs",
           component: () => import("./views/Dashboard/PageHelpFAQ.vue"),
-          meta: { pageTitle: "Help > FAQ" }
+          meta: { pageTitle: "Help > FAQ", requiresAuth: true }
         },
         {
           path: "/help/faq/:tag",
-          component: () => import("./views/Dashboard/PageHelpFAQ.vue")
+          component: () => import("./views/Dashboard/PageHelpFAQ.vue"),
+          meta: { requiresAuth: true }
         },
       ]
     },
@@ -61,26 +65,67 @@ export default new Router({
           path: "/auth/login",
           name: "login",
           component: () => import("./views/Auth/PageLogin.vue"),
-          meta: { pageTitle: "Login" }
+          beforeEnter: (to, from, next) => {
+            Auth.currentAuthenticatedUser().then(user => {
+              next('/')
+            }).catch((e) => {
+              next();
+            });
+          },
+          meta: { pageTitle: "Login", requiresAuth: false }
         },
         {
-          path: "/auth/create-account",
-          name: "createAccount",
-          component: () => import("./views/Auth/PageCreateAccount.vue"),
-          meta: { pageTitle: "Create Account" }
+          path: "/auth/new-password-required",
+          name: "newPassword",
+          component: () => import("./views/Auth/PageNewPasswordRequired.vue"),
+          meta: { pageTitle: "New Password Required", requiresAuth: false }
         },
         {
-          path: "/auth/add-information",
-          name: "addInformation",
-          component: () => import("./views/Auth/PageAddInformation.vue"),
-          meta: { pageTitle: "Add more information" }
+          path: "/auth/forgot-password",
+          name: "forgotPassword",
+          component: () => import("./views/Auth/PageForgotPassword.vue"),
+          meta: { pageTitle: "New Password Required", requiresAuth: false }
+        },
+        {
+          path: "/auth/reset-password",
+          name: "forgotPasswordSubmit",
+          component: () => import("./views/Auth/PageForgotPasswordSubmit.vue"),
+          meta: { pageTitle: "New Password Required", requiresAuth: false }
         }
       ]
     },
     {
       path: "/auth/signout",
       name: "signout",
-      redirect: "/auth/login"
+      beforeEnter: async (to, from, next) => {
+        try {
+          await Auth.signOut();
+          store.commit('clearUser');
+          next('/auth/login');
+        } catch(e) {
+          console.log('Unable to log out');
+          console.log(e);
+        }
+      }
     }
   ] // end of routes array
 });
+
+router.beforeResolve((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    Auth.currentAuthenticatedUser().then(data => {
+      next();
+    }).catch((e) => {
+      console.log(e);
+      next({
+        path: '/auth',
+        query: {
+          redirect: to.fullPath,
+        }
+      });
+    });
+  }
+  next();
+});
+
+export default router;

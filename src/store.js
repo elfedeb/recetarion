@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    menu: true
+    menu: true,
+    user: null
   },
   mutations: {
     toggleMenu (state) {
@@ -13,6 +14,12 @@ export default new Vuex.Store({
     },
     setMenu(state, menu) {
       state.menu = menu;
+    },
+    setUser(state, user) {
+      state.user = user;
+    },
+    clearUser(state) {
+      state.user = null;
     }
   },
   actions: {
