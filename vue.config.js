@@ -2,7 +2,7 @@ module.exports = {
   css: {
     sourceMap: true
   },
-  baseUrl: '',
+  publicPath: '',
   devServer: {
     host: 'localhost',
     port: 8080

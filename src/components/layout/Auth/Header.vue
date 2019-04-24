@@ -1,11 +1,7 @@
 <template>
-  <v-toolbar app light fixed clipped-left class="main-header">
-    <v-toolbar-title>
-      <a
-        href="/"
-        title="Sunstreet.com — Affordable solar technology"
-        target="_blank"
-      >
+  <v-toolbar app light fixed clipped-left class="main-header elevation-0">
+    <v-toolbar-title class="flex">
+      <a href="/" title="Sunstreet.com — Affordable solar technology" target="_blank">
         <svg class="sunstreet-logo" viewBox="0 0 977 144">
           <g
             class="sunstreet-logo-content"
@@ -21,9 +17,11 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn flat to="/home">Pay bill</v-btn>
-      <!-- <v-btn flat to="/home">Sign in</v-btn> -->
+      <v-btn flat to="/home" class="outline-btn">Pay bill</v-btn>
     </v-toolbar-items>
+    <!-- <v-toolbar-items>
+    <v-btn flat to="/home">Sign in</v-btn>
+    </v-toolbar-items>-->
   </v-toolbar>
 </template>
 
@@ -41,16 +39,46 @@ export default {
 
 <style lang="scss" scoped>
 .main-header {
-  .sunstreet-logo {
-    height: 30px;
-    margin-top: 8px;
-    @media screen and (max-width: 600px) {
-      height: 24px;
+  height: 80px;
+  padding: 8px 60px 0 !important;
+  background: #fff;
+  .v-toolbar__title {
+    display: flex;
+    a,
+    svg.sunstreet-logo {
+      height: 28px;
+      @media screen and (max-width: 600px) {
+        height: 24px;
+      }
     }
   }
 }
-.title {
-  font-weight: 600;
-  letter-spacing: -0.065rem !important;
+
+.v-btn.v-btn--flat.theme--light {
+  height: 36px;
+  margin: -4px 8px 0;
+  padding: 10px 8px;
+  border-style: none;
+  border-width: 0px;
+  border-color: hsla(230.3571428571429, 52.83%, 20.78%, 1);
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  &:hover {
+    border-color: hsla(230.3571428571429, 52.83%, 20.78%, 0.04);
+    color: hsla(225.75, 41.24%, 38.04%, 1);
+  }
+  &.outline-btn {
+    padding: 8px 16px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: hsla(230.3571428571429, 52.83%, 20.78%, 1);
+    &:hover {
+      border-color: hsla(225.75, 41.24%, 38.04%, 1);
+      background-color: hsla(230.3571428571429, 52.83%, 20.78%, 0.04);
+    }
+  }
 }
 </style>

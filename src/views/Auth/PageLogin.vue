@@ -18,7 +18,7 @@
           </v-layout>
         </v-card-title>
 
-        <hr>
+        <hr class="hr-divider">
         <FormFooter/>
       </v-card>
     </v-form>
@@ -26,42 +26,49 @@
 </template>
 
 <script>
-import FormFooter from "@/components/FormFooter.vue";
-import Auth from '@aws-amplify/auth';
+  import FormFooter from "@/components/FormFooter.vue";
+  import Auth from '@aws-amplify/auth';
 
-export default {
-  name: 'PageLogin',
-  components: {
-    FormFooter
-  },
-  data() {
-    return {
-      username: null,
-      password: null
-    }
-  },
-  methods: {
-    async onSubmit() {
-      console.log('Logging in...');
-      try {
-        let user = await Auth.signIn(this.username, this.password);
-        this.$store.commit('setUser', user);
-        console.log(this.$store.state.user);
-        if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
-          console.log('This requires a new password');
-          this.$router.push({path: '/auth/new-password-required'});
-        } else {
-          this.$router.push({path: '/home'});
+  export default {
+    name: 'PageLogin',
+    components: {
+      FormFooter
+    },
+    data() {
+      return {
+        username: null,
+        password: null
+      }
+    },
+    methods: {
+      async onSubmit() {
+        console.log('Logging in...');
+        try {
+          let user = await Auth.signIn(this.username, this.password);
+          this.$store.commit('setUser', user);
+          console.log(this.$store.state.user);
+          if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
+            console.log('This requires a new password');
+            this.$router.push({path: '/auth/new-password-required'});
+          } else {
+            this.$router.push({path: '/home'});
+          }
+        } catch(e) {
+          console.log('Failed auth');
+          console.log(e);
+          this.$notify({ group: 'app', type: 'error', text: e.message, duration: 3000 });
         }
-      } catch(e) {
-        console.log('Failed auth');
-        console.log(e);
-        this.$notify({ group: 'app', type: 'error', text: e.message, duration: 3000 });
       }
     }
   }
-}
 </script>
-<style lang=scss scoped>
 
+<style lang=scss scoped>
+  .v-form.login-form {
+    margin-left: 80px;
+    .hr-divider {
+      width: calc(100% + 43px);
+      margin-left: -22px;
+  }
+  }
 </style>
