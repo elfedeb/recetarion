@@ -111,11 +111,16 @@ var router = new Router({
   ] // end of routes array
 });
 
-router.beforeResolve((to, from, next) => {
+router.beforeResolve(async (to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    Auth.currentAuthenticatedUser().then(data => {
+    try {
+      let user = await Auth.currentAuthenticatedUser();
+      let session = await Auth.currentSession();
+      console.log(session);
+
+      if (!store.state.user) store.commit('setUser', user);
       next();
-    }).catch((e) => {
+    } catch (e) {
       console.log(e);
       next({
         path: '/auth',
@@ -123,7 +128,7 @@ router.beforeResolve((to, from, next) => {
           redirect: to.fullPath,
         }
       });
-    });
+    }
   }
   next();
 });

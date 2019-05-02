@@ -14,6 +14,7 @@ import Header from "@/components/layout/Dashboard/Header.vue";
 import MainAside from "@/components/layout/Dashboard/MainAside.vue";
 import MainSection from "@/components/layout/Dashboard/MainSection.vue";
 import Footer from "@/components/layout/Footer.vue";
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: "DashboardBase",
@@ -22,6 +23,10 @@ export default {
     MainAside,
     MainSection,
     Footer
+  },
+  mounted() {
+    this.$store.dispatch('getCustomer', this.$store.state.user.attributes['custom:external_id']);
+    console.log('User', this.$store.state.user);
   },
   data() {
     return {

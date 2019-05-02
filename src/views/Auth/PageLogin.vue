@@ -64,11 +64,5 @@
 </script>
 
 <style lang=scss scoped>
-  .v-form.login-form {
-    margin-left: 80px;
-    .hr-divider {
-      width: calc(100% + 43px);
-      margin-left: -22px;
-  }
-  }
+
 </style>

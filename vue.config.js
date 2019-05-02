@@ -3,6 +3,7 @@ module.exports = {
     sourceMap: true
   },
   devServer: {
-    host: 'localhost'
+    host: 'localhost',
+    https: true
   }
 }

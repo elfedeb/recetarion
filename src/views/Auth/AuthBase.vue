@@ -1,7 +1,7 @@
 <template>
   <v-app class="application--wrap">
     <Header/>
-    <v-content class="section" role="main">
+    <v-content class="auth-content" role="main">
       <v-container fluid fill-height class="login-box">
         <router-view></router-view>
       </v-container>
@@ -37,7 +37,7 @@ export default {
   background: #f2f2f2;
 }
 
-.section {
+.auth-content {
   flex: 1 auto;
   padding: 0.7rem 0.5rem;
   display: flex;
@@ -93,6 +93,14 @@ export default {
 /deep/ .v-card {
   max-width: 450px;
   padding: 1rem 1.6rem;
+}
+
+/deep/ .v-form {
+  margin-left: 80px;
+  .hr-divider {
+    width: calc(100% + 43px);
+    margin-left: -22px;
+  }
 }
 
 @media screen and (max-width: 600px) {
