@@ -1,185 +1,82 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800");
+@import url('https://rsms.me/inter/inter.css');
+html {
+    font-family: 'Inter', sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: rgba(0, 0, 0, 0.732);
+}
 
-$border-radius-u: 4px;
-$font-weight-bold: 600;
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
 
-// body::before {
-//   background: #000 url("~@/assets/sign-in.png");
-//   width: 1923px;
-//   height: 100%;
-//   content: "";
-//   display: block;
-//   position: fixed;
-//   z-index: 9999;
-//   opacity: 0.6;
-//   left: 0;
-//   pointer-events: none;
-// }
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
 
-body.login-page .v-content__wrap {
-  background-image: url("~@/assets/signin-background-couple.jpg");
-  background-origin: padding-box;
-  background-position: center center;
-  background-size: cover;
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter var', sans-serif;
+    }
 }
 
 hr {
-  background: #e6e6e6;
-  height: 1px;
-  border: 0;
-  width: 100%;
+    background: #e6e6e6;
+    height: 1px;
+    border: 0;
+    width: 100%;
 }
 
-.card-title {
-  font-size: 1.45rem;
-  line-height: 24px;
-  font-weight: 700;
-  letter-spacing: -0.15px;
-  margin: 0px 0 16px 0;
+a.editor {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-main.v-content {
-  .v-list > div:not(:last-of-type) {
-    .v-list__tile.v-list__tile--link .v-list__tile__content,
-    .v-list__tile__content
-      ~ .v-list__tile__action:not(.v-list__tile__action--stack) {
-      border-bottom: 1px solid #e0e0e0;
-    }
-  }
+
+/*
+= SVG icons and logos
+*/
+
+.icn {
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
 }
 
-aside {
-  .v-list .v-list__tile--link,
-  .v-list .v-list__tile--highlighted,
-  .v-list .v-list__group__header {
-    border-radius: $border-radius-u;
-    font-weight: $font-weight-bold;
-    color: rgba(0, 0, 0, 0.6);
-    .v-icon {
-      color: #9e9e9e;
-      caret-color: #9e9e9e;
-    }
-    &:hover {
-      background: #f5f5f5;
-    }
-    &.v-list__tile--active {
-      color: #192251 !important;
-      background: #e8eaf1;
-      &:hover {
-        background: #e0e3ec;
-      }
-      .v-icon {
-        color: #394c89 !important;
-        caret-color: #394c89 !important;
-      }
-    }
-  }
+.icon-affordable-icn-blk,
+.icon-env-icn-blk,
+.icon-house-icn-blk,
+.icon-production-icn-blk,
+.icon-thumb-icn-blk,
+.icon-community-icn-blk {
+    color: rgba(0, 0, 0, 0.76);
 }
 
-.v-card,
-.v-btn {
-  border-radius: $border-radius-u;
-}
-.v-btn {
-  font-weight: $font-weight-bold;
-}
-.section .container {
-  padding: 4px;
-  &.grid-list-lg .layout .column.flex {
-    // padding: 0 !important;
-    .flex {
-      padding: 4px;
-    }
-  }
-}
-
-.v-alert.v-alert.lennar-alert {
-  & {
-    border-width: 1px;
-    background: #fff;
-    color: #585858;
-    margin: -8px 0 16px;
-  }
-  & .v-alert__icon.v-icon,
-  &.v-alert__dismissible .v-icon {
-    color: #ffc108;
-    caret-color: #ffc108;
-  }
-}
-
-.todo-completed .v-icon {
-  color: #78be21;
-  caret-color: #78be21;
-}
-
-.v-card--flat {
-  border: 1px solid #e6e6e6 !important;
-}
-.v-stepper__step.v-stepper__step--active .v-stepper__step__step {
-  background: #212121 !important;
-}
-
-.v-stepper__step.v-stepper__step--complete .v-stepper__step__step {
-  background: #78be21 !important;
-}
-
-.v-stepper__step:not(.v-stepper__step--active):not(.v-stepper__step--complete):not(.v-stepper__step--error)
-  .v-stepper__step__step {
-  background: #9e9e9e;
-}
-
-.elev {
-  cursor: pointer;
-}
-.v-dialog {
-  .v-card__text {
-    @media screen and (max-width: 600px) {
-      padding: 4px;
-    }
-  }
-}
-.v-content__wrap {
-  display: flex;
-}
-
-.section {
-  .container.fluid.fill-height.fill-width {
-    margin: 8px;
-  }
+.icon-mouse-icn-wht,
+.icon-play-icn-wht {
+    color: #fff;
 }
 
 .embed-video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
 }
+
 .embed-video-container iframe,
 .embed-video-container object,
 .embed-video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.v-card {
-  .v-expansion-panel {
-    background: transparent;
-    box-shadow: none;
-    .v-expansion-panel__container {
-      background: transparent;
-    }
-    h4 {
-      color: #313a64;
-      margin-left: -8px;
-    }
-  }
-}
-
-.notifications {
-  margin-top: 70px;
-  margin-right: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

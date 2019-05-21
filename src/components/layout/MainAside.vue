@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer clipped fixed v-model="menuModel" app>
+  <aside>
     <span class="brand-image">
       <svg class="svg-icon sunstreet-svg" viewBox="0 0 50 50" aria-hidden="true">
         <path
@@ -12,50 +12,13 @@
     <span class="user-name">Robert Montgomery</span>
     <span class="user-email">rmontgomery@gmail.com</span>
     <hr>
-    <v-list>
-      <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.link">
-        <v-list-tile-action>
-          <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
-        </v-list-tile-action>
-
-        <v-list-tile-content>
-          <v-list-tile-title v-text="item.title"></v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
-  </v-navigation-drawer>
+  </aside>
 </template>
 
 <script>
-import { mapMutations, mapState } from "vuex";
 
 export default {
-  name: "MainAside",
-  methods: {
-    ...mapMutations(["setMenu"])
-  },
-  computed: {
-    ...mapState(["menu"]),
-    menuModel: {
-      set(menu) {
-        this.setMenu(menu);
-      },
-      get() {
-        return this.menu;
-      }
-    }
-  },
-  data() {
-    return {
-      menuItems: [
-        { icon: "home", title: "Home", link: "/home" },
-        { icon: "check_circle", title: "To-do", link: "/to-do" },
-        { icon: "account_circle", title: "Profile", link: "/profile" },
-        { icon: "help", title: "Help", link: "/help" }
-      ]
-    };
-  },
-  mounted() {}
+  name: "MainAside"
 };
 </script>
 
