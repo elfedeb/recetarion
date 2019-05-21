@@ -5,7 +5,7 @@ import MainLayout from "@/components/layout/MainLayout.vue";
 Vue.use(Router);
 
 var router = new Router({
-    mode: "history",
+    // mode: "history",
     base: process.env.BASE_URL,
     routes: [{
             path: "/",
@@ -13,20 +13,15 @@ var router = new Router({
             redirect: "/home",
             component: MainLayout,
             children: [{
-                    path: "/home",
-                    name: "home",
-                    component: () =>
-                        import ("./views/PageHome.vue"),
-                    meta: { pageTitle: "Home", requiresAuth: true }
-                },
-                {
-                    path: "/table",
-                    name: "table",
-                    component: () =>
-                        import ("./views/PageTable.vue"),
-                    meta: { pageTitle: "Table", requiresAuth: true }
-                },
-            ]
+                path: "/home",
+                name: "home",
+                component: () =>
+                    import ("./views/PageHome.vue"),
+                meta: {
+                    pageTitle: "Home",
+                    requiresAuth: true
+                }
+            }]
         }, ] // end of routes array
 });
 
