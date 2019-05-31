@@ -41,10 +41,16 @@
         </div>
       </div>
       <div class="subser">
-        <div>
+        <div v-if="ingredients">
+          <h3>Ingredients</h3>
+          <WorkForceModule :items="ingredients"/>
+        </div>
+        <h2 v-else>Loading...</h2>
+
+        <!-- <div>
           <h3>Workforce</h3>
           <WorkForceModule :items="wfdata.workforce"/>
-        </div>
+        </div>-->
         <div>
           <h3>Equipment</h3>
           <EquipmentModule :items="eqdata.equipment"/>
@@ -60,10 +66,21 @@ import RecipesModule from "@/components/ui/RecipesModule.vue";
 import IngredientsModule from "@/components/ui/IngredientsModule.vue";
 import WorkForceModule from "@/components/ui/WorkForceModule.vue";
 import EquipmentModule from "@/components/ui/EquipmentModule.vue";
+import gql from "graphql-tag";
 import recipeData from "@/data/data-recipes.js";
 import ingredientsData from "@/data/data-ingredients.js";
 import workforceData from "@/data/data-workforce.js";
 import equipmentData from "@/data/data-equipment.js";
+
+const recipesQr = gql`
+  query recipes {
+    ingredients {
+      id
+      name
+      description
+    }
+  }
+`;
 
 export default {
   name: "Home",
@@ -78,8 +95,16 @@ export default {
       rcdata: recipeData,
       indata: ingredientsData,
       wfdata: workforceData,
-      eqdata: equipmentData
+      eqdata: equipmentData,
+      loading: 0,
+      ingredients: null
     };
+  },
+  apollo: {
+    $loadingKey: "loading",
+    ingredients: {
+      query: recipesQr
+    }
   }
 };
 </script>

@@ -2,15 +2,26 @@
   <div class="workforce-module">
     <ul>
       <li v-for="(items) in items" :key="items.id">
-        <a class="workforce f6 lh-title mv2" @click="editField('Edit', items.id)">
+        <!-- <a class="workforce f6 lh-title mv2" @click="editField('Edit', items.id)"> -->
+          <router-link :to="`/ingredient/${items.id}`" class="workforce f6 lh-title mv2">
           <span class="dib b">{{ items.name }} — &nbsp;</span>
           <!-- <dd class="ml0 gray">{{ items.description }}</dd> -->
-          <span class="dib ml0 gray">${{ items.rate }}</span>
-        </a>
+          <span class="dib ml0 gray">${{ items.description }}</span>
+          </router-link>
+        <!-- </a> -->
       </li>
     </ul>
+    <!-- <li v-for="igr in ingredients" :key="igr.id">
+          <router-link :to="`/ingredient/${igr.id}`" class="link">
+            <div class="placeholder"></div>
+            <h3>{{igr.name}}</h3>
+            <p>{{igr.description}}</p>
+          </router-link>
+        </li> -->
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -19,11 +30,6 @@ export default {
     items: {
       required: true,
       type: Array
-    }
-  },
-  methods: {
-    editField: function(message, id) {
-      alert(message + " and " + id);
     }
   }
 };
